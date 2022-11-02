@@ -1,20 +1,29 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Email_Send_FinalReport" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:uascw="clr-namespace:UiPath.Activities.System.Compression.Workflow;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Email_Send_FinalReport" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:uascw="clr-namespace:UiPath.Activities.System.Compression.Workflow;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property sap2010:Annotation.AnnotationText="Datatable that contains the work items information" Name="in_workItemsDT" Type="InArgument(sd:DataTable)" />
-    <x:Property sap2010:Annotation.AnnotationText="Stores values from Config JSON file&#xD;&#xA;" Name="in_Config" Type="InArgument(njl:JObject)" />
-    <x:Property sap2010:Annotation.AnnotationText="User email" Name="in_email" Type="InArgument(x:String)" />
-    <x:Property sap2010:Annotation.AnnotationText="User email's password&#xD;&#xA;" Name="in_password" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Email recipient" Name="in_To" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Email body" Name="in_Body" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Email subject" Name="in_Subject" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="SMTP Port" Name="in_Port" Type="InArgument(x:Int32)" />
+    <x:Property sap2010:Annotation.AnnotationText="SMTP Server" Name="in_Server" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Final report full path" Name="in_FinalReport" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="User email" Name="in_Email" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="User email's password&#xA;" Name="in_Password" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Zip file path" Name="in_ZipFile" Type="InArgument(x:String)" />
+    <x:Property sap2010:Annotation.AnnotationText="Folder to compress" Name="in_ZipFolder" Type="InArgument(x:String)" />
   </x:Members>
-  <this:Email_Send_FinalReport.in_email>
+  <this:Email_Send_FinalReport.in_FinalReport>
     <InArgument x:TypeArguments="x:String" />
-  </this:Email_Send_FinalReport.in_email>
-  <this:Email_Send_FinalReport.in_password>
+  </this:Email_Send_FinalReport.in_FinalReport>
+  <this:Email_Send_FinalReport.in_Email>
     <InArgument x:TypeArguments="x:String" />
-  </this:Email_Send_FinalReport.in_password>
+  </this:Email_Send_FinalReport.in_Email>
+  <this:Email_Send_FinalReport.in_Password>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Email_Send_FinalReport.in_Password>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1512,862</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>874,862</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Email_Send_FinalReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="80">
@@ -112,18 +121,22 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="444,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Email_Send_FinalReport sequence started&quot;]" />
-    <uascw:CompressFiles Password="{x:Null}" CodePage="Default" CompressedFileInfo="[zipped]" CompressedFileName="[in_Config.SelectToken(&quot;zip_folder&quot;).ToString]" CompressionLevel="Normal" DisplayName="Compress/Zip Files" sap:VirtualizedContainerService.HintSize="444,213" sap2010:WorkflowViewState.IdRef="CompressFiles_1" OverrideExistingFile="True">
+    <uascw:CompressFiles Password="{x:Null}" CodePage="Default" CompressedFileInfo="[zipped]" CompressedFileName="[in_ZipFile]" CompressionLevel="Normal" DisplayName="Compress/Zip Files" sap:VirtualizedContainerService.HintSize="444,213" sap2010:WorkflowViewState.IdRef="CompressFiles_1" OverrideExistingFile="True">
       <uascw:CompressFiles.ContentToArchive>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-          <InArgument x:TypeArguments="x:String">[in_Config.SelectToken("monitored_folder").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String">[in_ZipFolder]</InArgument>
         </scg:List>
       </uascw:CompressFiles.ContentToArchive>
     </uascw:CompressFiles>
-    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[in_Config.SelectToken(&quot;email_body&quot;).ToString]" DisplayName="Send SMTP Mail Message" Email="[in_email]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="444,148" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="[in_password]" Port="[CInt(in_Config.SelectToken(&quot;smtp_port&quot;).ToString)]" SecureConnection="Auto" Server="[in_Config.SelectToken(&quot;smtp_server&quot;).ToString]" Subject="[in_Config.SelectToken(&quot;email_subject&quot;).ToString]" To="[in_Config.SelectToken(&quot;email_to&quot;).ToString]">
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[in_Body]" DisplayName="Send SMTP Mail Message" Email="[in_email]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="444,148" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="[in_password]" Port="[in_Port]" SecureConnection="Auto" Server="[in_Server]" Subject="[in_Subject]" To="[in_To]">
       <ui:SendMail.Files>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-          <InArgument x:TypeArguments="x:String">[zipped.FullName]</InArgument>
-          <InArgument x:TypeArguments="x:String">[in_Config.SelectToken("workbook_path").ToString]</InArgument>
+          <InArgument x:TypeArguments="x:String">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="zipped.FullName" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_FinalReport" />
+          </InArgument>
         </scg:List>
       </ui:SendMail.Files>
     </ui:SendMail>
