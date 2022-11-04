@@ -2,23 +2,15 @@
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Client ID value from current Work Item" Name="ClientID" Type="OutArgument(x:String)" />
     <x:Property sap2010:Annotation.AnnotationText="Check file full path " Name="CheckFilePath" Type="InArgument(x:String)" />
-    <x:Property sap2010:Annotation.AnnotationText="Folder to store downloaded check file " Name="MonitoredFolder" Type="InArgument(x:String)" />
     <x:Property sap2010:Annotation.AnnotationText="Text contained in button must be Check Request" Name="ButtonText" Type="InArgument(x:String)" />
-    <x:Property sap2010:Annotation.AnnotationText="Indicates if error in workflow" Name="WorkflowError" Type="OutArgument(x:String)" />
   </x:Members>
-  <this:ACME_Dowload_file.CheckFilePath>
-    <InArgument x:TypeArguments="x:String" />
-  </this:ACME_Dowload_file.CheckFilePath>
-  <this:ACME_Dowload_file.MonitoredFolder>
-    <InArgument x:TypeArguments="x:String" />
-  </this:ACME_Dowload_file.MonitoredFolder>
   <this:ACME_Dowload_file.ButtonText>
     <InArgument x:TypeArguments="x:String" />
   </this:ACME_Dowload_file.ButtonText>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>874,752</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>874,745</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ACME_Dowload_file_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -113,7 +105,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="If check request download is available, click on &quot;Download Check Request&quot; button, reads Clint ID number from PDF, and saves PDF in WIID folder" DisplayName="DownloadFile" sap:VirtualizedContainerService.HintSize="476,687" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="If check request download is available, click on &quot;Download Check Request&quot; button, reads Clint ID number from PDF, and saves PDF in WIID folder" DisplayName="DownloadFile" sap:VirtualizedContainerService.HintSize="476,680" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="download_button" />
       <Variable x:TypeArguments="si:FileInfo" Name="checkRequestFile" />
@@ -125,11 +117,12 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;DownloadFile Started&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,291" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,284" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Download File" sap:VirtualizedContainerService.HintSize="839,1368" sap2010:WorkflowViewState.IdRef="Sequence_30">
+        <Sequence DisplayName="Download File" sap:VirtualizedContainerService.HintSize="839,764" sap2010:WorkflowViewState.IdRef="Sequence_30">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="updateWorkItem" />
+            <Variable x:TypeArguments="x:String" Name="monitoredFolder" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -159,10 +152,10 @@
               </If.Else>
             </If>
           </Sequence>
-          <Sequence DisplayName="Verify Page" sap:VirtualizedContainerService.HintSize="797,670" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <Sequence DisplayName="Verify Page" sap:VirtualizedContainerService.HintSize="797,66" sap2010:WorkflowViewState.IdRef="Sequence_19">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -587,7 +580,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </p:CVScope>
-                  <If Condition="[download_button]" DisplayName="If download_button" sap:VirtualizedContainerService.HintSize="789,2857" sap2010:WorkflowViewState.IdRef="If_6">
+                  <If Condition="[download_button]" DisplayName="If download_button" sap:VirtualizedContainerService.HintSize="789,2941" sap2010:WorkflowViewState.IdRef="If_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -595,7 +588,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="510,2670" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                      <Sequence sap:VirtualizedContainerService.HintSize="510,2754" sap2010:WorkflowViewState.IdRef="Sequence_25">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -875,7 +868,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </p:CVScope>
-                        <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="5e3c25a0-3704-414b-9f32-11b861031a54" DisplayName="CV Save As Screen" sap:VirtualizedContainerService.HintSize="468,1184" sap2010:WorkflowViewState.IdRef="CVScope_11" Version="V3">
+                        <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="5e3c25a0-3704-414b-9f32-11b861031a54" DisplayName="CV Save As Screen" sap:VirtualizedContainerService.HintSize="468,1268" sap2010:WorkflowViewState.IdRef="CVScope_11" Version="V3">
                           <p:CVScope.Body>
                             <ActivityAction x:TypeArguments="x:Object">
                               <ActivityAction.Argument>
@@ -907,7 +900,15 @@
                                     </ui:Target>
                                   </p:CvTypeIntoWithDescriptor.Target>
                                 </p:CvTypeIntoWithDescriptor>
-                                <ui:GetLastDownloadedFile Timeout="{x:Null}" DisplayName="Wait for Request Check Download" DownloadFolder="[MonitoredFolder]" File="[checkRequestFile]" sap:VirtualizedContainerService.HintSize="434,435" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_4">
+                                <Assign DisplayName="Assign MonitoredFolder" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[monitoredFolder]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[left(CheckFilePath,CheckFilePath.IndexOf("WIID_"))]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <ui:GetLastDownloadedFile Timeout="{x:Null}" DisplayName="Wait for Request Check Download" DownloadFolder="[monitoredFolder]" File="[checkRequestFile]" sap:VirtualizedContainerService.HintSize="434,435" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_4">
                                   <ui:GetLastDownloadedFile.Body>
                                     <ActivityAction>
                                       <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,228" sap2010:WorkflowViewState.IdRef="Sequence_22">
@@ -1367,7 +1368,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,129" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,122" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1378,14 +1379,13 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Assign DisplayName="Assign WorkflowError" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[WorkflowError]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[exception.ToString]</InArgument>
-              </Assign.Value>
-            </Assign>
+            <Throw sap2010:Annotation.AnnotationText="exception" Exception="[exception]" sap:VirtualizedContainerService.HintSize="200,53" sap2010:WorkflowViewState.IdRef="Throw_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Throw>
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
