@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>874,734</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>874,2138</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ACME_Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -59,7 +59,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="70">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="35">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -95,10 +95,9 @@
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Log into ACME system, if user already logged, login steps are skipped" DisplayName="Login" sap:VirtualizedContainerService.HintSize="476,669" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Log into ACME system, if user already logged, login steps are skipped" DisplayName="Login" sap:VirtualizedContainerService.HintSize="877,2073" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="restore_popup" />
     </Sequence.Variables>
@@ -108,10 +107,10 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Login Started&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,284" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="835,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Login Started&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="835,1688" sap2010:WorkflowViewState.IdRef="TryCatch_4">
       <TryCatch.Try>
-        <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="797,857" sap2010:WorkflowViewState.IdRef="Sequence_25">
+        <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="797,1461" sap2010:WorkflowViewState.IdRef="Sequence_25">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="login_button" />
           </Sequence.Variables>
@@ -143,10 +142,10 @@
               </If.Else>
             </If>
           </Sequence>
-          <Sequence DisplayName="Verify Page" sap:VirtualizedContainerService.HintSize="755,66" sap2010:WorkflowViewState.IdRef="Sequence_29">
+          <Sequence DisplayName="Verify Page" sap:VirtualizedContainerService.HintSize="755,670" sap2010:WorkflowViewState.IdRef="Sequence_29">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -182,7 +181,7 @@
               <p:CVScope.DesignTimeCacheContainer>
                 <uc:CvCacheContainer>
                   <uc:CvCacheContainer.Caches>
-                    <scg:List x:TypeArguments="uc:CVCache" Capacity="4">
+                    <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
                       <uc:CVCache DisplayName="Screen CV Element Exists - 'Lo" Id="5e076716-aa33-4829-a6d2-e94f21259fb7" InformativeScreenshot="f4150066079bcc85528c28375fd89473" LogicalPosition="0, 0" OcrText="Ui ACME System 1 - Log In X + v _ X acme-test.uipath.com/login X ACME System 1 Hor Restore pages? Chrome didn't shut down correctly. Login Restore Home / Login To continue, please authenticate here Email: Password: Remember Me Login Forgot Your Password? Register" Position="0, 0" ServerVersion="1">
                         <uc:CVCache.CvUiElements>
                           <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="64">
@@ -334,11 +333,15 @@
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="797,1595" sap2010:WorkflowViewState.IdRef="Sequence_34">
                           <Sequence.Variables>
-                            <Variable x:TypeArguments="x:Boolean" Name="login_button" />
                             <Variable x:TypeArguments="x:String" Name="acme_password" />
                           </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
                           <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'Restore' (1203,158,43,12)&quot; +&#xA;&quot;Anchor: Button (1187,148,75,35)&quot;]" DesignTimeCacheId="5e076716-aa33-4829-a6d2-e94f21259fb7" DesignTimeScaleFactor="1" DisplayName="CV Element Exists - Restore" sap:VirtualizedContainerService.HintSize="755,136" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_10" InformativeScreenshot="0ef2cea0bf843ba0b4ea675a1f04cb39" Result="[restore_popup]" Version="V3">
                             <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                               <uc:CvDescriptor>
@@ -353,7 +356,7 @@
                               </uc:CvDescriptor>
                             </p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                           </p:CvElementExistsWithDescriptor>
-                          <If Condition="[restore_popup]" DisplayName="If restore_popup" sap:VirtualizedContainerService.HintSize="755,516" sap2010:WorkflowViewState.IdRef="If_12">
+                          <If Condition="[restore_popup]" DisplayName="If restore_popup" sap:VirtualizedContainerService.HintSize="755,517" sap2010:WorkflowViewState.IdRef="If_12">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -781,7 +784,7 @@
                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_28" Level="Trace" Message="[&quot;Restore popup not found, can continue&quot;]" />
                       </If.Else>
                     </If>
-                    <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'Work Items' (59,93,185,31)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Home / Work Items' (76,171,131,13)&quot;]" DesignTimeCacheId="67103732-17b2-4d60-a4fa-061abcf59710" DesignTimeScaleFactor="1" DisplayName="CV Element Exists - Text" sap:VirtualizedContainerService.HintSize="755,136" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_12" InformativeScreenshot="e44fa0cf4fe8fd19aaea44e786b61d28" Result="[workItems_button]" Version="V3">
+                    <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'Work Items' (59,93,185,31)&quot; +&#xA;&quot;Anchor: Text 'Home / Work Items' (76,171,131,13)&quot;]" DesignTimeCacheId="67103732-17b2-4d60-a4fa-061abcf59710" DesignTimeScaleFactor="1" DisplayName="CV Element Exists - Text" sap:VirtualizedContainerService.HintSize="755,136" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_12" InformativeScreenshot="e44fa0cf4fe8fd19aaea44e786b61d28" Result="[workItems_button]" Version="V3">
                       <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                         <uc:CvDescriptor>
                           <uc:CvDescriptor.Anchors>
@@ -826,7 +829,7 @@
               <p:CVScope.DesignTimeCacheContainer>
                 <uc:CvCacheContainer>
                   <uc:CvCacheContainer.Caches>
-                    <scg:List x:TypeArguments="uc:CVCache" Capacity="2">
+                    <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
                       <uc:CVCache DisplayName="Work Items Screen" Id="67103732-17b2-4d60-a4fa-061abcf59710" InformativeScreenshot="4e3c5bbbdfce0ad3a6ed88f08dfa4eb2" LogicalPosition="0, 71" OcrText="ACME System 1 Home Switch to new theme Log Out Work Items Home / Work Items Search Results Please find below your work items. They need to be completed in the order specified by your manager. Actions WIID Description Type Status Date 88083455 Research Client Check Copy WI2 Completed 2020-01-25 88083454 Research Client Check Copy WI2 Completed 2022-03-02 88083451 Research Client Check Copy WI2 Completed 2019-06-06 88083477 Research Client Check Copy WI2 Completed 2020-06-12 88083490 Verify Account Position WI1 Completed 2019-04-25 88083423 Generate Yearly Report for Vendor WI4 Completed 2021-05-29" Position="0, 71" ScreenshotGuid="2604cbe0-a3b7-410c-89c9-8af5e41bc1cd" ServerVersion="1">
                         <uc:CVCache.CvTables>
                           <x:Array Type="uc:CvTableInfo">
@@ -1068,10 +1071,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,122" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="801,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -1090,6 +1093,6 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Login Ended&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="835,91" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Login Ended&quot;]" />
   </Sequence>
 </Activity>

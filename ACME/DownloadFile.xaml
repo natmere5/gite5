@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>874,745</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>909,1441</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ACME_Dowload_file_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -100,12 +100,11 @@
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="If check request download is available, click on &quot;Download Check Request&quot; button, reads Clint ID number from PDF, and saves PDF in WIID folder" DisplayName="DownloadFile" sap:VirtualizedContainerService.HintSize="476,680" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="If check request download is available, click on &quot;Download Check Request&quot; button, reads Clint ID number from PDF, and saves PDF in WIID folder" DisplayName="DownloadFile" sap:VirtualizedContainerService.HintSize="919,1376" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="download_button" />
       <Variable x:TypeArguments="si:FileInfo" Name="checkRequestFile" />
@@ -116,8 +115,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;DownloadFile Started&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,284" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="877,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;DownloadFile Started&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="877,991" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <Sequence DisplayName="Download File" sap:VirtualizedContainerService.HintSize="839,764" sap2010:WorkflowViewState.IdRef="Sequence_30">
           <Sequence.Variables>
@@ -166,10 +165,12 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_18">
-                    <Sequence.Variables>
-                      <Variable x:TypeArguments="x:String" Name="clientCheck" />
-                    </Sequence.Variables>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,228" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                     <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Button (564,441,159,37)&quot;]" DesignTimeCacheId="dd12926d-c87d-46e9-a3e3-207d22c07522" DesignTimeScaleFactor="1" DisplayName="CV Element Exists - Button" sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_2" InformativeScreenshot="30c62732f4ebb4bca7326d9b76ded2f2" Result="[updateWorkItem]" Version="V3">
                       <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                         <uc:CvDescriptor>
@@ -188,7 +189,7 @@
               <p:CVScope.DesignTimeCacheContainer>
                 <uc:CvCacheContainer>
                   <uc:CvCacheContainer.Caches>
-                    <scg:List x:TypeArguments="uc:CVCache" Capacity="2">
+                    <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
                       <uc:CVCache DisplayName="Screen CV Element Exists - But (Main)" Id="dd12926d-c87d-46e9-a3e3-207d22c07522" InformativeScreenshot="2b32cbabff23218f48ff2c09c0c07049" LogicalPosition="0, 71" OcrText="ACME System 1 Home Switch to new theme Log Out Work Items - Work Item Details Home / Work Items / Work Item Details Calculate Client Security Hash Client Information Details Work Item Details Client ID: DB83622 WIID: 88083414 Client Name: Wilson Gau Type: Calculate Client Security Hash Client Country: Italy Status: Completed Date: 2022-01-12 Update Work Item Convright © 2022 ACME Svstems" Position="0, 71" ScreenshotGuid="1edf907b-e4da-4411-8f11-e18891ec3f55" ServerVersion="1">
                         <uc:CVCache.CvUiElements>
                           <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="32">
@@ -327,7 +328,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[&quot;Correct page&quot;]" />
-                <Sequence DisplayName="Download File" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                <Sequence DisplayName="Download File" sap:VirtualizedContainerService.HintSize="831,4500" sap2010:WorkflowViewState.IdRef="Sequence_27">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -342,10 +343,15 @@
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="797,990" sap2010:WorkflowViewState.IdRef="Sequence_20">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="clientCheck" />
                           </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
                           <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyWordGroup (160,374,126,20)&quot; +&#xA;&quot;Anchor: Text 'Work Item Details' (563,374,144,16)&quot;]" DesignTimeCacheId="39e94d90-7d80-4c59-84e6-ddfd37ef8b10" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="755,166" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_3" InformativeScreenshot="598c5a48133d794550b5383addbc74fe" RefreshBefore="True" Result="[clientCheck]" Version="V3">
                             <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                               <uc:CvDescriptor>
@@ -594,13 +600,18 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="5b33b435-86d8-40d3-b5b5-b6e8d6c6a560" DisplayName="CV Check Request Screen" sap:VirtualizedContainerService.HintSize="468,752" sap2010:WorkflowViewState.IdRef="CVScope_10" Version="V3">
+                        <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="5b33b435-86d8-40d3-b5b5-b6e8d6c6a560" DisplayName="CV Check Request Screen" sap:VirtualizedContainerService.HintSize="434,752" sap2010:WorkflowViewState.IdRef="CVScope_10" Version="V3">
                           <p:CVScope.Body>
                             <ActivityAction x:TypeArguments="x:Object">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="442,565" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
                                 <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (826,438,73,16)&quot; +&#xA;&quot;Anchor: Text 'Client ID' (750,441,67,16)&quot;]" DesignTimeCacheId="35b846f0-e143-45e5-8c96-d8ee3ba52dea" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="400,166" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_4" InformativeScreenshot="8962cc124ee9fb85b0a4ad74443e3120" RefreshBefore="True" Result="[ClientID]" Version="V3">
                                   <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                                     <uc:CvDescriptor>
@@ -852,7 +863,7 @@
                             </ActivityFunc>
                           </p:CVScope.OCREngine>
                           <p:CVScope.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8f6e7b1b-b4aa-4681-9368-a66c5088176b" InformativeScreenshot="d9e7aeb438b6768f2aa023f157783d11" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Check-Request-For*Google Chrome' /&gt;&lt;ctrl name='Check-Request-For*Google Chrome' role='pane' /&gt;&lt;ctrl name='Google Chrome' role='pane' /&gt;&lt;ctrl idx='6' role='pane' /&gt;" WaitForReady="INTERACTIVE">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8f6e7b1b-b4aa-4681-9368-a66c5088176b" InformativeScreenshot="d9e7aeb438b6768f2aa023f157783d11" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Check-Request-For*Google Chrome' /&gt;&lt;ctrl name='Check-Request-For*Google Chrome' role='pane' /&gt;&lt;ctrl name='Google Chrome' role='pane' /&gt;" WaitForReady="INTERACTIVE">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
@@ -1334,15 +1345,6 @@
                         </p:CVScope>
                       </Sequence>
                     </If.Then>
-                    <If.Else>
-                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_26">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </Sequence>
-                    </If.Else>
                   </If>
                 </Sequence>
               </Sequence>
@@ -1368,10 +1370,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,122" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="843,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -1390,6 +1392,6 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;DownloadFile Ended&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="877,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;DownloadFile Ended&quot;]" />
   </Sequence>
 </Activity>

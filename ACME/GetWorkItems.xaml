@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>874,734</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>874,743</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ACME_WorkItems_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="88">
@@ -100,10 +100,9 @@
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Goes to Work Items screen and extracts the table information" DisplayName="GetWorkItems" sap:VirtualizedContainerService.HintSize="476,669" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Goes to Work Items screen and extracts the table information" DisplayName="GetWorkItems" sap:VirtualizedContainerService.HintSize="480,678" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="tempWorkItemsDT" />
       <Variable x:TypeArguments="x:String" Name="totalPages" />
@@ -115,10 +114,10 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;GetWorkItems Started&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,284" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;GetWorkItems Started&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,293" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Get Work Items" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_25">
+        <Sequence DisplayName="Get Work Items" sap:VirtualizedContainerService.HintSize="839,870" sap2010:WorkflowViewState.IdRef="Sequence_25">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="workITemsText" />
           </Sequence.Variables>
@@ -165,7 +164,7 @@
                     <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                   </ActivityAction.Argument>
                   <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_15">
-                    <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'Items' (155,93,89,31)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Search Results' (146,250,97,13)&quot;]" DesignTimeCacheId="282a4d7f-1a0c-4a7a-ada2-d8c5bc3436b3" DesignTimeScaleFactor="1" DisplayName="CV Element Exists - Text" sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_1" InformativeScreenshot="8a04b73fb43fdaa524b6d51dc1502f8f" Result="[workITemsText]" Version="V3">
+                    <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Text 'Items' (155,93,89,31)&quot; +&#xA;&quot;Anchor: Text 'Search Results' (146,250,97,13)&quot;]" DesignTimeCacheId="282a4d7f-1a0c-4a7a-ada2-d8c5bc3436b3" DesignTimeScaleFactor="1" DisplayName="CV Element Exists - Text" sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_1" InformativeScreenshot="8a04b73fb43fdaa524b6d51dc1502f8f" Result="[workITemsText]" Version="V3">
                       <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                         <uc:CvDescriptor>
                           <uc:CvDescriptor.Anchors>
@@ -188,7 +187,7 @@
               <p:CVScope.DesignTimeCacheContainer>
                 <uc:CvCacheContainer>
                   <uc:CvCacheContainer.Caches>
-                    <scg:List x:TypeArguments="uc:CVCache" Capacity="2">
+                    <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
                       <uc:CVCache DisplayName="Work Items Screen" Id="282a4d7f-1a0c-4a7a-ada2-d8c5bc3436b3" InformativeScreenshot="8e8532aa3b3d1585b895067f13d10bbc" LogicalPosition="0, 71" OcrText="ACME System 1 Home Switch to new theme Log Out Work Items Home / Work Items Search Results Please find below your work items. They need to be completed in the order specified by your manager. Actions WIID Description Type Status Date 88083455 Research Client Check Copy WI2 Completed 2020-01-25 88083454 Research Client Check Copy WI2 Completed 2022-03-02" Position="0, 71" ScreenshotGuid="15e57c93-0a5b-4dde-889e-fb20fd89d01c" ServerVersion="1">
                         <uc:CVCache.CvTables>
                           <x:Array Type="uc:CvTableInfo">
@@ -365,7 +364,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Trace" Message="[&quot;Correct page&quot;]" />
-                <Sequence DisplayName="Get Work Items" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                <Sequence DisplayName="Get Work Items" sap:VirtualizedContainerService.HintSize="554,3992" sap2010:WorkflowViewState.IdRef="Sequence_19">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -986,7 +985,7 @@
                               </ActivityAction.Argument>
                               <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_27">
                                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="400,91" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Trace" Message="[&quot;Go to the end of the page &quot; + counter.ToString]" />
-                                <p:CvClickWithDescriptor DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" Descriptor="[&quot;Target: ArrowButton (1262,589,18,18) OffsetPoint: (0,-36)&quot; +&#xA;&quot;Anchor: ArrowButton (1262,0,17,18)&quot;]" DesignTimeCacheId="d332b3d1-17da-459b-b6d8-1fcbb3d3b755" DesignTimeScaleFactor="1" DisplayName="CV Click - ArrowButton" sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_13" InformativeScreenshot="773fe7b9394efff157a77ad32d4ba973" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                                <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: ArrowButton (1262,589,18,18) OffsetPoint: (0,-36)&quot; +&#xA;&quot;Anchor: ArrowButton (1262,0,17,18)&quot;]" DesignTimeCacheId="d332b3d1-17da-459b-b6d8-1fcbb3d3b755" DesignTimeScaleFactor="1" DisplayName="CV Click - ArrowButton" sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_13" InformativeScreenshot="773fe7b9394efff157a77ad32d4ba973" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
                                   <p:CvClickWithDescriptor.CursorPosition>
                                     <ui:CursorPosition Position="Center">
                                       <ui:CursorPosition.OffsetX>
@@ -1836,10 +1835,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,122" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
