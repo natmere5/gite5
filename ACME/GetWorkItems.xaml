@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>874,5372</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>874,5349</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ACME_WorkItems_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="48">
@@ -100,10 +100,9 @@
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Goes to Work Items screen and extracts the table information" DisplayName="GetWorkItems" sap:VirtualizedContainerService.HintSize="877,5307" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Goes to Work Items screen and extracts the table information" DisplayName="GetWorkItems" sap:VirtualizedContainerService.HintSize="877,5284" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="tempWorkItemsDT" />
       <Variable x:TypeArguments="x:String" Name="totalPages" />
@@ -115,10 +114,10 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="835,93" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;GetWorkItems Started&quot;]" />
-    <TryCatch DisplayName="Try Catch Get Work Items" sap:VirtualizedContainerService.HintSize="835,4918" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="835,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;GetWorkItems Started&quot;]" />
+    <TryCatch DisplayName="Try Catch Get Work Items" sap:VirtualizedContainerService.HintSize="835,4897" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Get Work Items" sap:VirtualizedContainerService.HintSize="797,4663" sap2010:WorkflowViewState.IdRef="Sequence_25">
+        <Sequence DisplayName="Get Work Items" sap:VirtualizedContainerService.HintSize="797,4646" sap2010:WorkflowViewState.IdRef="Sequence_25">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="workITemsText" />
             <Variable x:TypeArguments="sd:DataTable" Name="WorkItemsDT2" />
@@ -129,7 +128,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="755,93" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Trace" Message="[&quot;Verifying landing page...&quot;]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="755,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Trace" Message="[&quot;Verifying landing page...&quot;]" />
           <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="2d6eb62f-f8c3-4f1a-80ab-1575a9e89f66" DisplayName="CV ACME Home Screen" sap:VirtualizedContainerService.HintSize="755,52" sap2010:WorkflowViewState.IdRef="CVScope_12" Version="V3">
             <p:CVScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
@@ -1330,9 +1329,9 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </p:CVScope>
-          <ui:InterruptibleDoWhile Condition="[counter &lt;= CInt(totalPages)]" DisplayName="Do While counter &lt;= totalPages" sap:VirtualizedContainerService.HintSize="755,3263" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_4">
+          <ui:InterruptibleDoWhile Condition="[counter &lt;= CInt(totalPages)]" DisplayName="Do While counter &lt;= totalPages" sap:VirtualizedContainerService.HintSize="755,3258" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_4">
             <ui:InterruptibleDoWhile.Body>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="610,3096" sap2010:WorkflowViewState.IdRef="Sequence_46">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="610,3093" sap2010:WorkflowViewState.IdRef="Sequence_46">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1346,7 +1345,7 @@
                         <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                       </ActivityAction.Argument>
                       <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_49">
-                        <p:CvClickWithDescriptor DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" DelayBefore="2000" Descriptor="[&quot;Target: ArrowButton (1262,659,18,18) OffsetPoint: (1,-44)&quot; +&#xD;&#xA;&quot;Anchor: ArrowButton (1261,69,19,20)&quot;]" DesignTimeCacheId="8609e132-6798-432a-8870-340ee8b0e847" DesignTimeScaleFactor="1" DisplayName="CV Click Bottom Arrow" sap:VirtualizedContainerService.HintSize="400,137" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_23" InformativeScreenshot="c995d004e044ebca7acd0a5feade18df" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                        <p:CvClickWithDescriptor DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" DelayBefore="2000" Descriptor="[&quot;Target: ArrowButton (1262,659,18,18) OffsetPoint: (1,-44)&quot; +&#xA;&quot;Anchor: ArrowButton (1261,69,19,20)&quot;]" DesignTimeCacheId="8609e132-6798-432a-8870-340ee8b0e847" DesignTimeScaleFactor="1" DisplayName="CV Click Bottom Arrow" sap:VirtualizedContainerService.HintSize="400,137" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_23" InformativeScreenshot="c995d004e044ebca7acd0a5feade18df" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
                           <p:CvClickWithDescriptor.CursorPosition>
                             <ui:CursorPosition Position="Center">
                               <ui:CursorPosition.OffsetX>
@@ -1380,7 +1379,7 @@
                             </ui:Target>
                           </p:CvClickWithDescriptor.Target>
                         </p:CvClickWithDescriptor>
-                        <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: ArrowButton (1262,70,18,19)&quot; +&#xD;&#xA;&quot;Anchor: ArrowButton (1262,659,18,19)&quot;]" DesignTimeCacheId="ed572f63-4e3d-4a88-9388-7873a779b0a7" DesignTimeScaleFactor="1" DisplayName="CV Click - ArrowButton" sap:VirtualizedContainerService.HintSize="400,137" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_22" InformativeScreenshot="ed53ecbcc217ae746f46c6aa203625b2" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                        <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: ArrowButton (1262,70,18,19)&quot; +&#xA;&quot;Anchor: ArrowButton (1262,659,18,19)&quot;]" DesignTimeCacheId="ed572f63-4e3d-4a88-9388-7873a779b0a7" DesignTimeScaleFactor="1" DisplayName="CV Click - ArrowButton" sap:VirtualizedContainerService.HintSize="400,137" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_22" InformativeScreenshot="ed53ecbcc217ae746f46c6aa203625b2" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
                           <p:CvClickWithDescriptor.CursorPosition>
                             <ui:CursorPosition Position="Center">
                               <ui:CursorPosition.OffsetX>
@@ -1423,7 +1422,7 @@
                   <p:CVScope.DesignTimeCacheContainer>
                     <uc:CvCacheContainer>
                       <uc:CvCacheContainer.Caches>
-                        <scg:List x:TypeArguments="uc:CVCache" Capacity="4">
+                        <scg:List x:TypeArguments="uc:CVCache" Capacity="3">
                           <uc:CVCache DisplayName="ACME Work Items Screen" Id="30aec03d-8cf5-4c1e-83e2-d80ecbf6c57e" InformativeScreenshot="0836ee5f268c4ff7aa5ff95566c833af" LogicalPosition="0, 0" OcrText="Ui ACME System 1 - Work Items X + v _ X acme-test.uipath.com/work-items N ACME System 1 Home Switch to new theme Log Out 88083455 Research Client Check Copy WI2 Completed 2020-01-25 88083454 Research Client Check Copy WI2 Completed 2022-03-02 88083451 Research Client Check Copy WI2 Completed 2019-06-06 88083477 Research Client Check Copy WI2 Completed 2020-06-12 88083490 Verify Account Position WI1 Completed 2019-04-25 88083423 Generate Yearly Report for Vendor WI4 Completed 2021-05-29 88083414 Calculate Client Security Hash WI5 Completed 2022-01-12 88083471 Research Client Check Copy WI2 Completed 2021-10-19 88083418 Generate Yearly Report for Vendor WI4 Open 2017-01-30 88083436 Process Vendor Invoice WI3 Completed 2018-10-07 1 2 3 4 5 6 7 8 9 10 11 &gt; Copyright © 2022 ACME Systems" Position="0, 0" ScreenshotGuid="2ca06441-0175-45d8-9f96-3b8edb74b772" ServerVersion="1">
                             <uc:CVCache.CvTables>
                               <x:Array Type="uc:CvTableInfo">
@@ -2331,15 +2330,15 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="d332b3d1-17da-459b-b6d8-1fcbb3d3b755" DisplayName="CV ACME Work Items Table Screen" sap:VirtualizedContainerService.HintSize="568,565" sap2010:WorkflowViewState.IdRef="CVScope_18" Version="V3">
+                <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="d332b3d1-17da-459b-b6d8-1fcbb3d3b755" DisplayName="CV ACME Work Items Table Screen" sap:VirtualizedContainerService.HintSize="568,562" sap2010:WorkflowViewState.IdRef="CVScope_18" Version="V3">
                   <p:CVScope.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                       </ActivityAction.Argument>
                       <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_45">
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="400,93" sap2010:WorkflowViewState.IdRef="LogMessage_58" Level="Trace" Message="[&quot;Going to next page...&quot;]" />
-                        <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: ArrowButton (1101,448,28,27)&quot; +&#xA;&quot;Anchor: Text 'Copyright © 2022 ACME Systems' (130,530,212,16)&quot; +&#xA;&quot;Anchor: Text 'Log Out' (1150,18,52,16)&quot;]" DesignTimeCacheId="d332b3d1-17da-459b-b6d8-1fcbb3d3b755" DesignTimeScaleFactor="1" DisplayName="CV Click Next Page" sap:VirtualizedContainerService.HintSize="400,137" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_21" InformativeScreenshot="4c32accb52ad1728681e4f3ff099f26d" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="400,91" sap2010:WorkflowViewState.IdRef="LogMessage_58" Level="Trace" Message="[&quot;Going to next page...&quot;]" />
+                        <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: ArrowButton (1101,448,28,27)&quot; +&#xA;&quot;Anchor: Text 'Copyright © 2022 ACME Systems' (130,530,212,16)&quot; +&#xA;&quot;Anchor: Text 'Log Out' (1150,18,52,16)&quot;]" DesignTimeCacheId="d332b3d1-17da-459b-b6d8-1fcbb3d3b755" DesignTimeScaleFactor="1" DisplayName="CV Click Next Page" sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_21" InformativeScreenshot="4c32accb52ad1728681e4f3ff099f26d" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
                           <p:CvClickWithDescriptor.CursorPosition>
                             <ui:CursorPosition Position="Center">
                               <ui:CursorPosition.OffsetX>
@@ -2707,7 +2706,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:InterruptibleDoWhile>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="755,93" sap2010:WorkflowViewState.IdRef="LogMessage_68" Level="Trace" Message="[&quot;Filter datatable to keep just desired data&quot;]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="755,91" sap2010:WorkflowViewState.IdRef="LogMessage_68" Level="Trace" Message="[&quot;Filter datatable to keep just desired data&quot;]" />
           <ui:FilterDataTable DataTable="[WorkItemsDT]" DisplayName="Filter Data Table to keep Work Items after 2017" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="755,162" sap2010:WorkflowViewState.IdRef="FilterDataTable_7" OutputDataTable="[WorkItemsDT]" SelectColumnsMode="Remove">
             <ui:FilterDataTable.Filters>
               <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
@@ -2741,16 +2740,16 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:FilterDataTable>
-          <If Condition="[WorkItemsDT.RowCount = 0]" DisplayName="If WorkItemsDT.RowCount = 0" sap:VirtualizedContainerService.HintSize="755,483" sap2010:WorkflowViewState.IdRef="If_6">
+          <If Condition="[WorkItemsDT.RowCount = 0]" DisplayName="If WorkItemsDT.RowCount = 0" sap:VirtualizedContainerService.HintSize="755,475" sap2010:WorkflowViewState.IdRef="If_6">
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="376,323" sap2010:WorkflowViewState.IdRef="Sequence_31">
+              <Sequence sap:VirtualizedContainerService.HintSize="376,317" sap2010:WorkflowViewState.IdRef="Sequence_31">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_32" Level="Error" Message="[&quot;WorkItemsDT empty, no more work to do&quot;]" />
-                <Throw sap2010:Annotation.AnnotationText="new BusinessRuleException(&quot;Work items datatable didn't contain any work item, no process needed&quot;)" Exception="[new BusinessRuleException(&quot;Work items datatable didn't contain any work item, no process needed&quot;)]" sap:VirtualizedContainerService.HintSize="334,98" sap2010:WorkflowViewState.IdRef="Throw_4">
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_32" Level="Error" Message="[&quot;WorkItemsDT empty, no more work to do&quot;]" />
+                <Throw sap2010:Annotation.AnnotationText="new BusinessRuleException(&quot;Work items datatable didn't contain any work item, no process needed&quot;)" Exception="[new BusinessRuleException(&quot;Work items datatable didn't contain any work item, no process needed&quot;)]" sap:VirtualizedContainerService.HintSize="334,94" sap2010:WorkflowViewState.IdRef="Throw_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -2760,7 +2759,7 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Trace" Message="[&quot;WorkItemsDT rows: &quot; + WorkItemsDT.RowCount.ToString]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Trace" Message="[&quot;WorkItemsDT rows: &quot; + WorkItemsDT.RowCount.ToString]" />
             </If.Else>
           </If>
         </Sequence>
