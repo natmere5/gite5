@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FRJLDbZHQHxEeSnOs1iZOIsnswa6+QZXg/491GR4+K3cT3w09vyEiM+1ajxvs/saN8ZqB/XMJkIbbxow+/3+xA==",
+  "dgSpecHash": "QTBxIERnJgT7siDBSl+nyUKWCApRYrW6hTT6Qw3my6R4rNHHFU2yHMZ5wshMUl0nbRrym+zstvcUbIGm3s+oew==",
   "success": true,
-  "projectFilePath": "D:\\Users\\natalia.mercado\\Documents\\UiPath\\Download Work Item Details_Library\\.local\\",
+  "projectFilePath": "D:\\Users\\natalia.mercado\\Documents\\UiPath\\gite5\\.local\\",
   "expectedPackageFiles": [
     "D:\\Users\\natalia.mercado\\.nuget\\packages\\avalonedit\\6.0.1\\avalonedit.6.0.1.nupkg.sha512",
     "D:\\Users\\natalia.mercado\\.nuget\\packages\\closedxml\\0.87.1\\closedxml.0.87.1.nupkg.sha512",

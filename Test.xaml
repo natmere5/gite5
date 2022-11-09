@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Test" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="874,2432" sap2010:WorkflowViewState.IdRef="Test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Test" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="874,3099" sap2010:WorkflowViewState.IdRef="Test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
       <x:String>System.Activities</x:String>
@@ -69,7 +69,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Test" sap:VirtualizedContainerService.HintSize="568,2367" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Test" sap:VirtualizedContainerService.HintSize="831,3034" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="njl:JObject" Name="config" />
       <Variable x:TypeArguments="x:String" Name="acme_uername" />
@@ -84,7 +84,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Init" sap:VirtualizedContainerService.HintSize="526,1272" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Init" sap:VirtualizedContainerService.HintSize="789,1032" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="folderWIIDExists" />
       </Sequence.Variables>
@@ -94,7 +94,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize Config JSON" sap:VirtualizedContainerService.HintSize="484,59" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[config]" JsonString="[System.IO.File.ReadAllText(&quot;D:\Users\natalia.mercado\Documents\UiPath\Download Work Item Details\Config\config.json&quot;)]">
+      <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize Config JSON" sap:VirtualizedContainerService.HintSize="431,59" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[config]" JsonString="[System.IO.File.ReadAllText(&quot;D:\Users\natalia.mercado\Documents\UiPath\Download Work Item Details\Config\config.json&quot;)]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -102,7 +102,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:DeserializeJson>
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="484,193" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431,193" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -140,7 +140,7 @@
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <ui:KillProcess Process="{x:Null}" AppliesTo="OnlyCurrentUser" ContinueOnError="True" DisplayName="Kill Chrome Process" sap:VirtualizedContainerService.HintSize="484,132" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="chrome">
+      <ui:KillProcess Process="{x:Null}" AppliesTo="OnlyCurrentUser" ContinueOnError="True" DisplayName="Kill Chrome Process" sap:VirtualizedContainerService.HintSize="431,132" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="chrome">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -148,54 +148,28 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:KillProcess>
-      <ui:FolderExistsX DisplayName="Folder WIID Exists" Exists="[folderWIIDExists]" sap:VirtualizedContainerService.HintSize="484,132" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[config(&quot;monitored_folder&quot;).ToString]">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </ui:FolderExistsX>
-      <If Condition="[not folderWIIDExists]" DisplayName="If not folderWIIDExists" sap:VirtualizedContainerService.HintSize="484,266" sap2010:WorkflowViewState.IdRef="If_1">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-        <If.Then>
-          <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create WIID Folder" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[config(&quot;monitored_folder&quot;).ToString]" />
-        </If.Then>
-        <If.Else>
-          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </Sequence>
-        </If.Else>
-      </If>
-      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[config(&quot;acme_credential&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="484,79" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[acme_password]" Username="[acme_uername]" />
-      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[config(&quot;email_credential&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="484,79" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[email_password]" Username="[email_uername]" />
+      <ui:DeleteFolderX DisplayName="Delete Folder" sap:VirtualizedContainerService.HintSize="431,79" sap2010:WorkflowViewState.IdRef="DeleteFolderX_1" Path="[config(&quot;monitored_folder&quot;).ToString]" Recursive="True" />
+      <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create WIID Folder" sap:VirtualizedContainerService.HintSize="431,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[config(&quot;monitored_folder&quot;).ToString]" />
+      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[config(&quot;acme_credential&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="431,79" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[acme_password]" Username="[acme_uername]" />
+      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[config(&quot;email_credential&quot;).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="431,79" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[email_password]" Username="[email_uername]" />
     </Sequence>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Launch workflow" sap:VirtualizedContainerService.HintSize="526,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Browser\Launch.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Launch workflow" sap:VirtualizedContainerService.HintSize="789,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Browser\Launch.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="URL">[config("acme_url_login").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Login workflow" sap:VirtualizedContainerService.HintSize="526,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="ACME\Login.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Login workflow" sap:VirtualizedContainerService.HintSize="789,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="ACME\Login.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="Username">[acme_uername]</InArgument>
         <InArgument x:TypeArguments="ss:SecureString" x:Key="Password">[acme_password]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GetWorkItems workflow" sap:VirtualizedContainerService.HintSize="526,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ACME\GetWorkItems.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GetWorkItems workflow" sap:VirtualizedContainerService.HintSize="789,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="ACME\GetWorkItems.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="sd:DataTable" x:Key="WorkItemsDT">[WorkItemsDT]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[WorkItemsDT]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="526,51" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[WorkItemsDT]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="789,958" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -213,25 +187,15 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GoToWorkItem workflow" sap:VirtualizedContainerService.HintSize="713,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Browser\GoToWorkItem.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="URL">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;acme_url_workitems&quot;).ToString" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="WIID">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(0).ToString" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="URL">[config("acme_url_workitems").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="WIID">[CurrentRow(0).ToString]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke DownloadFile workflow" sap:VirtualizedContainerService.HintSize="713,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="ACME\DownloadFile.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <OutArgument x:TypeArguments="x:String" x:Key="ClientID">
-                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="clientID" />
-                </OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="CheckFilePath">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Format(config(&quot;pdf_url&quot;).ToString,Environment.GetEnvironmentVariable(&quot;UserProfile&quot;),CurrentRow(0).ToString)" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="ButtonText">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;button_text&quot;).ToString" />
-                </InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="ClientID">[clientID]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="CheckFilePath">[String.Format(config("pdf_url").ToString,Environment.GetEnvironmentVariable("UserProfile"),CurrentRow(0).ToString)]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="ButtonText">[config("button_text").ToString]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
             <ui:FileExistsX DisplayName="File Exists" Exists="[PDFExists]" sap:VirtualizedContainerService.HintSize="713,132" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[String.Format(config(&quot;pdf_url&quot;).ToString,Environment.GetEnvironmentVariable(&quot;UserProfile&quot;),CurrentRow(0).ToString)]" />
@@ -239,18 +203,14 @@
               <If.Then>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ChangeStatus workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="ACME\ChangeStatus.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="Comments">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Comments(0)" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="Comments">[Comments(0)]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </If.Then>
               <If.Else>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ChangeStatus workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="ACME\ChangeStatus.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="Comments">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Comments(1)" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="Comments">[Comments(1)]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </If.Else>
@@ -260,32 +220,22 @@
       </ui:ForEachRow.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke FinalReport workflow" sap:VirtualizedContainerService.HintSize="526,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Excel\FinalReport.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke FinalReport workflow" sap:VirtualizedContainerService.HintSize="789,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Excel\FinalReport.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="WorkItemsDT">
-          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="WorkItemsDT" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="FinalReportPath">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;final_report_path&quot;).ToString" />
-        </InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="WorkItemsDT">[WorkItemsDT]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="FinalReportPath">[config("final_report_path").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SendFinalReport workflow" sap:VirtualizedContainerService.HintSize="526,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Email\SendFinalReport.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SendFinalReport workflow" sap:VirtualizedContainerService.HintSize="789,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Email\SendFinalReport.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="njl:JObject" x:Key="EmailData">
-          <mva:VisualBasicValue x:TypeArguments="njl:JObject" ExpressionText="JObject.FromObject(New With { .To = config(&quot;email_to&quot;).ToString,  .Subject = config(&quot;email_subject&quot;).ToString,  .Body = config(&quot;email_body&quot;).ToString,  .Email = email_uername,  .Server = config(&quot;smtp_server&quot;).ToString,  .Port = config(&quot;smtp_port&quot;).ToString})" />
-        </InArgument>
-        <InArgument x:TypeArguments="ss:SecureString" x:Key="Password">
-          <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="email_password" />
-        </InArgument>
-        <InArgument x:TypeArguments="njl:JObject" x:Key="ZipData">
-          <mva:VisualBasicValue x:TypeArguments="njl:JObject" ExpressionText="JObject.FromObject(New With { .ZipFile = config(&quot;zip_file&quot;).ToString,  .ZipFolder = config(&quot;zip_folder&quot;).ToString})" />
-        </InArgument>
+        <InArgument x:TypeArguments="njl:JObject" x:Key="EmailData" xml:space="preserve">[JObject.FromObject(New With { .To = config("email_to").ToString,  .Subject = config("email_subject").ToString,  .Body = config("email_body").ToString,  .Email = email_uername,  .Server = config("smtp_server").ToString,  .Port = config("smtp_port").ToString})]</InArgument>
+        <InArgument x:TypeArguments="ss:SecureString" x:Key="Password">[email_password]</InArgument>
+        <InArgument x:TypeArguments="njl:JObject" x:Key="ZipData" xml:space="preserve">[JObject.FromObject(New With { .ZipFile = config("zip_file").ToString,  .ZipFolder = config("zip_folder").ToString})]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logout workflow" sap:VirtualizedContainerService.HintSize="526,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="ACME\Logout.xaml">

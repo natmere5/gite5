@@ -86,6 +86,33 @@
     },
     {
       "Package": {
+        "Id": "UiPath.OCR.Activities",
+        "Version": "3.11.0"
+      },
+      "Assemblies": [
+        "D:\\Users\\natalia.mercado\\.nuget\\packages\\microsoft.azure.cognitiveservices.vision.computervision/7.0.1\\lib/net461/Microsoft.Azure.CognitiveServices.Vision.ComputerVision.dll",
+        "D:\\Users\\natalia.mercado\\.nuget\\packages\\microsoft.rest.clientruntime/2.3.21\\lib/net461/Microsoft.Rest.ClientRuntime.dll",
+        "D:\\Users\\natalia.mercado\\.nuget\\packages\\microsoft.rest.clientruntime.azure/3.3.18\\lib/net452/Microsoft.Rest.ClientRuntime.Azure.dll",
+        "D:\\Users\\natalia.mercado\\.nuget\\packages\\newtonsoft.json/13.0.1\\lib/net45/Newtonsoft.Json.dll",
+        "D:\\Users\\natalia.mercado\\.nuget\\packages\\nlog/4.5.11\\lib/net45/NLog.dll",
+        "D:\\Users\\natalia.mercado\\.nuget\\packages\\polly/7.1.0\\lib/netstandard2.0/Polly.dll",
+        "D:\\Users\\natalia.mercado\\.nuget\\packages\\system.buffers/4.5.1\\lib/net461/System.Buffers.dll",
+        "D:\\Users\\natalia.mercado\\.nuget\\packages\\system.collections.immutable/5.0.0\\lib/net461/System.Collections.Immutable.dll",
+        "D:\\Users\\natalia.mercado\\.nuget\\packages\\system.io.abstractions/3.0.10\\lib/net40/System.IO.Abstractions.dll",
+        "D:\\Users\\natalia.mercado\\.nuget\\packages\\system.memory/4.5.4\\lib/net461/System.Memory.dll",
+        "D:\\Users\\natalia.mercado\\.nuget\\packages\\system.numerics.vectors/4.5.0\\lib/net46/System.Numerics.Vectors.dll",
+        "D:\\Users\\natalia.mercado\\.nuget\\packages\\system.runtime.compilerservices.unsafe/4.7.1\\lib/net461/System.Runtime.CompilerServices.Unsafe.dll",
+        "D:\\Users\\natalia.mercado\\.nuget\\packages\\system.valuetuple/4.5.0\\lib/net461/System.ValueTuple.dll",
+        "D:\\Users\\natalia.mercado\\.nuget\\packages\\uipath.ocr.activities/3.11.0\\lib/net461/UiPath.OCR.Activities.Design.dll",
+        "D:\\Users\\natalia.mercado\\.nuget\\packages\\uipath.ocr.activities/3.11.0\\lib/net461/UiPath.OCR.Activities.dll",
+        "D:\\Users\\natalia.mercado\\.nuget\\packages\\uipath.ocr.activities/3.11.0\\lib/net461/UiPath.OCR.Core.dll",
+        "D:\\Users\\natalia.mercado\\.nuget\\packages\\uipath.ocr.contracts/2.13.0\\lib/net461/UiPath.OCR.Contracts.dll",
+        "D:\\Users\\natalia.mercado\\.nuget\\packages\\uipath.platform/22.10.2\\lib/net461/UiPath.Platform.dll"
+      ],
+      "Path": "D:\\Users\\natalia.mercado\\.nuget\\packages\\uipath.ocr.activities\\3.11.0"
+    },
+    {
+      "Package": {
         "Id": "UiPath.System.Activities",
         "Version": "21.10.3"
       },
@@ -188,33 +215,6 @@
         "D:\\Users\\natalia.mercado\\.nuget\\packages\\uipath.vision/3.1.4\\lib/net461/UiPath.Vision.dll"
       ],
       "Path": "D:\\Users\\natalia.mercado\\.nuget\\packages\\uipath.uiautomation.activities\\21.10.4"
-    },
-    {
-      "Package": {
-        "Id": "UiPath.OCR.Activities",
-        "Version": "3.11.0"
-      },
-      "Assemblies": [
-        "D:\\Users\\natalia.mercado\\.nuget\\packages\\microsoft.azure.cognitiveservices.vision.computervision/7.0.1\\lib/net461/Microsoft.Azure.CognitiveServices.Vision.ComputerVision.dll",
-        "D:\\Users\\natalia.mercado\\.nuget\\packages\\microsoft.rest.clientruntime/2.3.21\\lib/net461/Microsoft.Rest.ClientRuntime.dll",
-        "D:\\Users\\natalia.mercado\\.nuget\\packages\\microsoft.rest.clientruntime.azure/3.3.18\\lib/net452/Microsoft.Rest.ClientRuntime.Azure.dll",
-        "D:\\Users\\natalia.mercado\\.nuget\\packages\\newtonsoft.json/13.0.1\\lib/net45/Newtonsoft.Json.dll",
-        "D:\\Users\\natalia.mercado\\.nuget\\packages\\nlog/4.5.11\\lib/net45/NLog.dll",
-        "D:\\Users\\natalia.mercado\\.nuget\\packages\\polly/7.1.0\\lib/netstandard2.0/Polly.dll",
-        "D:\\Users\\natalia.mercado\\.nuget\\packages\\system.buffers/4.5.1\\lib/net461/System.Buffers.dll",
-        "D:\\Users\\natalia.mercado\\.nuget\\packages\\system.collections.immutable/5.0.0\\lib/net461/System.Collections.Immutable.dll",
-        "D:\\Users\\natalia.mercado\\.nuget\\packages\\system.io.abstractions/3.0.10\\lib/net40/System.IO.Abstractions.dll",
-        "D:\\Users\\natalia.mercado\\.nuget\\packages\\system.memory/4.5.4\\lib/net461/System.Memory.dll",
-        "D:\\Users\\natalia.mercado\\.nuget\\packages\\system.numerics.vectors/4.5.0\\lib/net46/System.Numerics.Vectors.dll",
-        "D:\\Users\\natalia.mercado\\.nuget\\packages\\system.runtime.compilerservices.unsafe/4.7.1\\lib/net461/System.Runtime.CompilerServices.Unsafe.dll",
-        "D:\\Users\\natalia.mercado\\.nuget\\packages\\system.valuetuple/4.5.0\\lib/net461/System.ValueTuple.dll",
-        "D:\\Users\\natalia.mercado\\.nuget\\packages\\uipath.ocr.activities/3.11.0\\lib/net461/UiPath.OCR.Activities.Design.dll",
-        "D:\\Users\\natalia.mercado\\.nuget\\packages\\uipath.ocr.activities/3.11.0\\lib/net461/UiPath.OCR.Activities.dll",
-        "D:\\Users\\natalia.mercado\\.nuget\\packages\\uipath.ocr.activities/3.11.0\\lib/net461/UiPath.OCR.Core.dll",
-        "D:\\Users\\natalia.mercado\\.nuget\\packages\\uipath.ocr.contracts/2.13.0\\lib/net461/UiPath.OCR.Contracts.dll",
-        "D:\\Users\\natalia.mercado\\.nuget\\packages\\uipath.platform/22.10.2\\lib/net461/UiPath.Platform.dll"
-      ],
-      "Path": "D:\\Users\\natalia.mercado\\.nuget\\packages\\uipath.ocr.activities\\3.11.0"
     },
     {
       "Package": {
