@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>874,779</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>720,779</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ACME_Extract_WorkItems_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="39">
@@ -107,16 +107,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="842f7cde-55ba-40bc-b54b-956bf451ccf7" DisplayName="Extract Work Items Datatable" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CVScope_4" Version="V3">
+        <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="842f7cde-55ba-40bc-b54b-956bf451ccf7" DisplayName="Extract Work Items Datatable" sap:VirtualizedContainerService.HintSize="434,447" sap2010:WorkflowViewState.IdRef="CVScope_4" Version="V3">
           <p:CVScope.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
               </ActivityAction.Argument>
               <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                <Sequence.Variables>
-                  <Variable x:TypeArguments="x:Boolean" Name="TableExists" />
-                </Sequence.Variables>
                 <p:CvExtractDataTableWithDescriptor InRegion="{x:Null}" AddHeaders="True" Descriptor="[&quot;Target: Table (127,120,1004,386)&quot;]" DesignTimeCacheId="842f7cde-55ba-40bc-b54b-956bf451ccf7" DesignTimeScaleFactor="1" DisplayName="CV Extract Work Items Table with headers" sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="CvExtractDataTableWithDescriptor_7" IgnoreEmptyRows="False" InformativeScreenshot="04416de2b2e5167afce03fb751d93339" RefreshBefore="True" Result="[WorkItemsDT]" Scroll="False" Version="V3">
                   <p:CvExtractDataTableWithDescriptor.DesignTimeDescriptor>
                     <uc:CvDescriptor>

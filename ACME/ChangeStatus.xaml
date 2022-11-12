@@ -91,9 +91,6 @@
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Click &quot;Update Work Item&quot; button, if the check request file was available to be downloaded, add &quot;Downloaded&quot; comment if not add &quot;Not Downloaded&quot; comment, change status to &quot;Completed&quot; and click &quot;Update Work Item&quot; button, close pop up window at the end" DisplayName="ChangeStatus" sap:VirtualizedContainerService.HintSize="480,1439" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="x:Boolean" Name="updateWorkItem" />
-    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -383,7 +380,7 @@
               </Catch>
             </TryCatch.Catches>
           </TryCatch>
-          <TryCatch sap2010:Annotation.AnnotationText="If the check request file was available to be downloaded, add &quot;Downloaded&quot; comment if not add &quot;Not Downloaded&quot; comment, change status to &quot;Completed&quot; and click &quot;Update Work Item&quot; button, close pop up window at the end" DisplayName="Update Work Item" sap:VirtualizedContainerService.HintSize="200,198" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+          <TryCatch sap2010:Annotation.AnnotationText="If the check request file was available to be downloaded, add &quot;Downloaded&quot; comment if not add &quot;Not Downloaded&quot; comment, change status to &quot;Completed&quot; and click &quot;Update Work Item&quot; button, close pop up window at the end" DisplayName="Update Work Item" sap:VirtualizedContainerService.HintSize="438,359" sap2010:WorkflowViewState.IdRef="TryCatch_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -392,16 +389,18 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="c61f80fe-5cf3-4ec9-8366-ac90d3f3b7ae" DisplayName="Update Work Item" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CVScope_11" Version="V3">
+              <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="c61f80fe-5cf3-4ec9-8366-ac90d3f3b7ae" DisplayName="Update Work Item" sap:VirtualizedContainerService.HintSize="434,1870" sap2010:WorkflowViewState.IdRef="CVScope_11" Version="V3">
                 <p:CVScope.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_24">
-                      <Sequence.Variables>
-                        <Variable x:TypeArguments="x:Boolean" Name="UpdateButton" />
-                      </Sequence.Variables>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="442,1811" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="400,91" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Trace" Message="[&quot;Adding comment...&quot;]" />
                       <p:CvTypeIntoWithDescriptor DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (44,340,346,57)&quot; +&#xA;&quot;Anchor: Text 'Add Comments:' (44,320,110,13)&quot;]" DesignTimeCacheId="7187e46b-41f1-4c7b-a264-a82e3dd973d4" DesignTimeScaleFactor="1" DisplayName="CV Type Into - Add Comments" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,184" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_4" InformativeScreenshot="0124e041f68dd7b608dddfe20646e8da" Text="[Comments]" Version="V3">
                         <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>

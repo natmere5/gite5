@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>720,1304</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>874,5828</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ACME_WorkItems_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="48">
@@ -106,7 +106,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Goes page by page extracting all the work items from the datatable.&#xD;&#xA;&#xD;&#xA;Filters datatable removing work items with Date below 2019, removes first column (Actions)" DisplayName="GetWorkItems" sap:VirtualizedContainerService.HintSize="480,1239" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Goes page by page extracting all the work items from the datatable.&#xD;&#xA;&#xD;&#xA;Filters datatable removing work items with Date below 2019, removes first column (Actions)" DisplayName="GetWorkItems" sap:VirtualizedContainerService.HintSize="764,5763" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="tempWorkItemsDT" />
       <Variable x:TypeArguments="x:String" Name="totalPages" />
@@ -118,8 +118,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;GetWorkItems Started&quot;]" />
-    <TryCatch DisplayName="Try Catch Get Work Items" sap:VirtualizedContainerService.HintSize="438,813" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="722,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;GetWorkItems Started&quot;]" />
+    <TryCatch DisplayName="Try Catch Get Work Items" sap:VirtualizedContainerService.HintSize="722,5352" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -127,15 +127,9 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="" DisplayName="GetWorkItems" sap:VirtualizedContainerService.HintSize="242,542" sap2010:WorkflowViewState.IdRef="Sequence_25">
+        <Sequence sap2010:Annotation.AnnotationText="" DisplayName="GetWorkItems" sap:VirtualizedContainerService.HintSize="684,5081" sap2010:WorkflowViewState.IdRef="Sequence_25">
           <Sequence.Variables>
-            <Variable x:TypeArguments="x:Boolean" Name="workITemsText" />
             <Variable x:TypeArguments="sd:DataTable" Name="ToFilterDT" />
-            <Variable x:TypeArguments="scg:List(sd:DataRow)" Name="listFiltered">
-              <Variable.Default>
-                <mva:VisualBasicValue x:TypeArguments="scg:List(sd:DataRow)" ExpressionText="New List(Of DataRow)" />
-              </Variable.Default>
-            </Variable>
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -144,7 +138,7 @@
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch sap2010:Annotation.AnnotationText="Verify if Work Items page is displayed correctly by getting total pages, if not, an exception is going to be thrown." DisplayName="Validation Landing Page" sap:VirtualizedContainerService.HintSize="200,138" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+          <TryCatch sap2010:Annotation.AnnotationText="Verify if Work Items page is displayed correctly by getting total pages, if not, an exception is going to be thrown." DisplayName="Validation Landing Page" sap:VirtualizedContainerService.HintSize="472,1407" sap2010:WorkflowViewState.IdRef="TryCatch_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -159,78 +153,76 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_38">
-                      <Sequence DisplayName="If Work Items title exists - then" sap:VirtualizedContainerService.HintSize="400,827" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                    <Sequence DisplayName="If Work Items title exists - then" sap:VirtualizedContainerService.HintSize="376,827" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_69" Level="Trace" Message="[&quot;Currently in Work Items page, getting total pages...&quot;]" />
+                      <Assign sap2010:Annotation.AnnotationText="Counter initialization" DisplayName="Assign counter = 1" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="Assign_15">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">1</InArgument>
+                        </Assign.Value>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_69" Level="Trace" Message="[&quot;Currently in Work Items page, getting total pages...&quot;]" />
-                        <Assign sap2010:Annotation.AnnotationText="Counter initialization" DisplayName="Assign counter = 1" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="Assign_15">
-                          <Assign.To>
-                            <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
-                          </Assign.To>
-                          <Assign.Value>
-                            <InArgument x:TypeArguments="x:Int32">1</InArgument>
-                          </Assign.Value>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </Assign>
-                        <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: ArrowButton (1262,659,18,18) OffsetPoint: (1,-28)&quot; +&#xD;&#xA;&quot;Anchor: ArrowButton (1261,69,19,20)&quot;]" DesignTimeCacheId="3343d727-da2b-42da-a744-9f0d31aa66d4" DesignTimeScaleFactor="1" DisplayName="CV Click bottom page" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_24" InformativeScreenshot="4ab9ac799e393e92832ceeef5d50ee17" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
-                          <p:CvClickWithDescriptor.CursorPosition>
-                            <ui:CursorPosition Position="Center">
-                              <ui:CursorPosition.OffsetX>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:CursorPosition.OffsetX>
-                              <ui:CursorPosition.OffsetY>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:CursorPosition.OffsetY>
-                            </ui:CursorPosition>
-                          </p:CvClickWithDescriptor.CursorPosition>
-                          <p:CvClickWithDescriptor.DesignTimeDescriptor>
-                            <uc:CvDescriptor TargetPointOffset="1, -28">
-                              <uc:CvDescriptor.Anchors>
-                                <x:Array Type="uc:CvElementDescriptor">
-                                  <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1261, 69, 19, 20" ElementType="ArrowButton" />
-                                </x:Array>
-                              </uc:CvDescriptor.Anchors>
-                              <uc:CvDescriptor.Target>
-                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1262, 659, 18, 18" ElementType="ArrowButton" />
-                              </uc:CvDescriptor.Target>
-                            </uc:CvDescriptor>
-                          </p:CvClickWithDescriptor.DesignTimeDescriptor>
-                          <p:CvClickWithDescriptor.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="cb9a0433-1592-4f33-9955-47047f9c9c54">
-                              <ui:Target.TimeoutMS>
-                                <InArgument x:TypeArguments="x:Int32" />
-                              </ui:Target.TimeoutMS>
-                              <ui:Target.WaitForReady>
-                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                              </ui:Target.WaitForReady>
-                            </ui:Target>
-                          </p:CvClickWithDescriptor.Target>
-                        </p:CvClickWithDescriptor>
-                        <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (1071,524,14,14)&quot; +&#xD;&#xA;&quot;Anchor: ArrowButton (1101,518,27,27)&quot; +&#xD;&#xA;&quot;Anchor: ArrowButton (1262,659,18,19)&quot;]" DesignTimeCacheId="cdcb11f0-5769-49f4-8ebc-8f275958fa7f" DesignTimeScaleFactor="1" DisplayName="Get total pages" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_4" InformativeScreenshot="ac13d849063182f4375746fdee45fb65" RefreshBefore="True" Result="[totalPages]" Version="V3">
-                          <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                            <uc:CvDescriptor>
-                              <uc:CvDescriptor.Anchors>
-                                <x:Array Type="uc:CvElementDescriptor">
-                                  <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1101, 518, 27, 27" ElementType="ArrowButton" />
-                                  <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1262, 659, 18, 19" ElementType="ArrowButton" />
-                                </x:Array>
-                              </uc:CvDescriptor.Anchors>
-                              <uc:CvDescriptor.Target>
-                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1071, 524, 14, 14" ElementType="AnyText" />
-                              </uc:CvDescriptor.Target>
-                            </uc:CvDescriptor>
-                          </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                        </p:CvGetTextWithDescriptor>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_70" Level="Trace" Message="[&quot;Total pages: &quot; + totalPages]" />
-                      </Sequence>
+                      </Assign>
+                      <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: ArrowButton (1262,659,18,18) OffsetPoint: (1,-28)&quot; +&#xD;&#xA;&quot;Anchor: ArrowButton (1261,69,19,20)&quot;]" DesignTimeCacheId="3343d727-da2b-42da-a744-9f0d31aa66d4" DesignTimeScaleFactor="1" DisplayName="CV Click bottom page" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_24" InformativeScreenshot="4ab9ac799e393e92832ceeef5d50ee17" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                        <p:CvClickWithDescriptor.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </p:CvClickWithDescriptor.CursorPosition>
+                        <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                          <uc:CvDescriptor TargetPointOffset="1, -28">
+                            <uc:CvDescriptor.Anchors>
+                              <x:Array Type="uc:CvElementDescriptor">
+                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1261, 69, 19, 20" ElementType="ArrowButton" />
+                              </x:Array>
+                            </uc:CvDescriptor.Anchors>
+                            <uc:CvDescriptor.Target>
+                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1262, 659, 18, 18" ElementType="ArrowButton" />
+                            </uc:CvDescriptor.Target>
+                          </uc:CvDescriptor>
+                        </p:CvClickWithDescriptor.DesignTimeDescriptor>
+                        <p:CvClickWithDescriptor.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="cb9a0433-1592-4f33-9955-47047f9c9c54">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </p:CvClickWithDescriptor.Target>
+                      </p:CvClickWithDescriptor>
+                      <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (1071,524,14,14)&quot; +&#xD;&#xA;&quot;Anchor: ArrowButton (1101,518,27,27)&quot; +&#xD;&#xA;&quot;Anchor: ArrowButton (1262,659,18,19)&quot;]" DesignTimeCacheId="cdcb11f0-5769-49f4-8ebc-8f275958fa7f" DesignTimeScaleFactor="1" DisplayName="Get total pages" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_4" InformativeScreenshot="ac13d849063182f4375746fdee45fb65" RefreshBefore="True" Result="[totalPages]" Version="V3">
+                        <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                          <uc:CvDescriptor>
+                            <uc:CvDescriptor.Anchors>
+                              <x:Array Type="uc:CvElementDescriptor">
+                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1101, 518, 27, 27" ElementType="ArrowButton" />
+                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1262, 659, 18, 19" ElementType="ArrowButton" />
+                              </x:Array>
+                            </uc:CvDescriptor.Anchors>
+                            <uc:CvDescriptor.Target>
+                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1071, 524, 14, 14" ElementType="AnyText" />
+                            </uc:CvDescriptor.Target>
+                          </uc:CvDescriptor>
+                        </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                      </p:CvGetTextWithDescriptor>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_70" Level="Trace" Message="[&quot;Total pages: &quot; + totalPages]" />
                     </Sequence>
                   </ActivityAction>
                 </p:CVScope.Body>
@@ -856,7 +848,7 @@
               </Catch>
             </TryCatch.Catches>
           </TryCatch>
-          <TryCatch sap2010:Annotation.AnnotationText="Generate and fill WorkItems Datatable" DisplayName="Get Work Items" sap:VirtualizedContainerService.HintSize="642,3880" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+          <TryCatch sap2010:Annotation.AnnotationText="Generate and fill WorkItems Datatable" DisplayName="Get Work Items" sap:VirtualizedContainerService.HintSize="642,4632" sap2010:WorkflowViewState.IdRef="TryCatch_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -865,7 +857,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <Sequence DisplayName="Create and fill output datatable" sap:VirtualizedContainerService.HintSize="604,3578" sap2010:WorkflowViewState.IdRef="Sequence_59">
+              <Sequence DisplayName="Create and fill output datatable" sap:VirtualizedContainerService.HintSize="604,4330" sap2010:WorkflowViewState.IdRef="Sequence_59">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -889,7 +881,7 @@
                               <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                             </ActivityAction.Argument>
                             <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_55">
-                              <p:CvClickWithDescriptor DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" DelayBefore="2000" Descriptor="[&quot;Target: ArrowButton (1262,659,18,18) OffsetPoint: (1,-44)&quot; +&#xA;&quot;Anchor: ArrowButton (1261,69,19,20)&quot;]" DesignTimeCacheId="8609e132-6798-432a-8870-340ee8b0e847" DesignTimeScaleFactor="1" DisplayName="CV Click Bottom Arrow" sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_25" InformativeScreenshot="c995d004e044ebca7acd0a5feade18df" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                              <p:CvClickWithDescriptor DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" DelayBefore="2000" Descriptor="[&quot;Target: ArrowButton (1262,659,18,18) OffsetPoint: (1,-44)&quot; +&#xA;&quot;Anchor: ArrowButton (1261,69,19,20)&quot;]" DesignTimeCacheId="8609e132-6798-432a-8870-340ee8b0e847" DesignTimeScaleFactor="1" DisplayName="CV Click Bottom Arrow" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_25" InformativeScreenshot="c995d004e044ebca7acd0a5feade18df" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
                                 <p:CvClickWithDescriptor.CursorPosition>
                                   <ui:CursorPosition Position="Center">
                                     <ui:CursorPosition.OffsetX>

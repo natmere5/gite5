@@ -115,7 +115,6 @@
       <TryCatch.Try>
         <Sequence DisplayName="GoToWorkItem" sap:VirtualizedContainerService.HintSize="242,511" sap2010:WorkflowViewState.IdRef="Sequence_48">
           <Sequence.Variables>
-            <Variable x:TypeArguments="x:Boolean" Name="WorkItemsText" />
             <Variable x:TypeArguments="x:Boolean" Name="WorkItemDetailsText" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
@@ -124,7 +123,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap2010:Annotation.AnnotationText="If URL is not provided or doesn't match URL format, an exception is going to be thrown." DisplayName="Input Validations" sap:VirtualizedContainerService.HintSize="200,138" sap2010:WorkflowViewState.IdRef="Sequence_43">
+          <Sequence sap2010:Annotation.AnnotationText="If URL is not provided or doesn't match URL format, an exception is going to be thrown." DisplayName="Input Validations" sap:VirtualizedContainerService.HintSize="839,1414" sap2010:WorkflowViewState.IdRef="Sequence_43">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="URLFormat" />
             </Sequence.Variables>
@@ -162,10 +161,6 @@
               </If.Then>
               <If.Else>
                 <Sequence DisplayName="If URL is Nothing or WIID is Nothing - else" sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_41">
-                  <Sequence.Variables>
-                    <Variable x:TypeArguments="x:Boolean" Name="URLFormat" />
-                    <Variable x:TypeArguments="x:Boolean" Name="DigitFormat" />
-                  </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
