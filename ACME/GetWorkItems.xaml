@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>874,5828</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1059,6001</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ACME_WorkItems_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="48">
@@ -63,7 +63,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="40">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="39">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -103,14 +103,11 @@
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Goes page by page extracting all the work items from the datatable.&#xD;&#xA;&#xD;&#xA;Filters datatable removing work items with Date below 2019, removes first column (Actions)" DisplayName="GetWorkItems" sap:VirtualizedContainerService.HintSize="764,5763" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Goes page by page extracting all the work items from the datatable.&#xA;&#xA;Filters datatable removing work items with Date below 2019, removes first column (Actions)" DisplayName="GetWorkItems" sap:VirtualizedContainerService.HintSize="1069,5936" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="tempWorkItemsDT" />
-      <Variable x:TypeArguments="x:String" Name="totalPages" />
-      <Variable x:TypeArguments="x:Int32" Name="counter" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -118,8 +115,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="722,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;GetWorkItems Started&quot;]" />
-    <TryCatch DisplayName="Try Catch Get Work Items" sap:VirtualizedContainerService.HintSize="722,5352" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1027,93" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;GetWorkItems Started&quot;]" />
+    <TryCatch DisplayName="Try Catch Get Work Items" sap:VirtualizedContainerService.HintSize="1027,5518" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -127,9 +124,11 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="" DisplayName="GetWorkItems" sap:VirtualizedContainerService.HintSize="684,5081" sap2010:WorkflowViewState.IdRef="Sequence_25">
+        <Sequence sap2010:Annotation.AnnotationText="" DisplayName="GetWorkItems" sap:VirtualizedContainerService.HintSize="989,5240" sap2010:WorkflowViewState.IdRef="Sequence_25">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="ToFilterDT" />
+            <Variable x:TypeArguments="x:Boolean" Name="NextButton" />
+            <Variable x:TypeArguments="x:Int32" Name="counter" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -138,16 +137,16 @@
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch sap2010:Annotation.AnnotationText="Verify if Work Items page is displayed correctly by getting total pages, if not, an exception is going to be thrown." DisplayName="Validation Landing Page" sap:VirtualizedContainerService.HintSize="472,1407" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+          <TryCatch sap2010:Annotation.AnnotationText="Verify if Work Items page is displayed correctly by going to the bottom of the page, if not, an exception is going to be thrown." DisplayName="Validation Landing Page" sap:VirtualizedContainerService.HintSize="947,841" sap2010:WorkflowViewState.IdRef="TryCatch_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="3343d727-da2b-42da-a744-9f0d31aa66d4" DisplayName="Get total pages" sap:VirtualizedContainerService.HintSize="434,1138" sap2010:WorkflowViewState.IdRef="CVScope_14" Version="V3">
+              <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="3343d727-da2b-42da-a744-9f0d31aa66d4" DisplayName="Get total pages" sap:VirtualizedContainerService.HintSize="434,565" sap2010:WorkflowViewState.IdRef="CVScope_14" Version="V3">
                 <p:CVScope.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
@@ -159,21 +158,8 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_69" Level="Trace" Message="[&quot;Currently in Work Items page, getting total pages...&quot;]" />
-                      <Assign sap2010:Annotation.AnnotationText="Counter initialization" DisplayName="Assign counter = 1" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="Assign_15">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:Int32">1</InArgument>
-                        </Assign.Value>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </Assign>
-                      <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: ArrowButton (1262,659,18,18) OffsetPoint: (1,-28)&quot; +&#xD;&#xA;&quot;Anchor: ArrowButton (1261,69,19,20)&quot;]" DesignTimeCacheId="3343d727-da2b-42da-a744-9f0d31aa66d4" DesignTimeScaleFactor="1" DisplayName="CV Click bottom page" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_24" InformativeScreenshot="4ab9ac799e393e92832ceeef5d50ee17" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="400,93" sap2010:WorkflowViewState.IdRef="LogMessage_69" Level="Trace" Message="[&quot;Currently in Work Items page, getting total pages...&quot;]" />
+                      <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: ArrowButton (1262,659,18,18) OffsetPoint: (1,-28)&quot; +&#xA;&quot;Anchor: ArrowButton (1261,69,19,20)&quot;]" DesignTimeCacheId="3343d727-da2b-42da-a744-9f0d31aa66d4" DesignTimeScaleFactor="1" DisplayName="CV Click bottom page" sap:VirtualizedContainerService.HintSize="400,137" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_24" InformativeScreenshot="4ab9ac799e393e92832ceeef5d50ee17" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
                         <p:CvClickWithDescriptor.CursorPosition>
                           <ui:CursorPosition Position="Center">
                             <ui:CursorPosition.OffsetX>
@@ -207,22 +193,6 @@
                           </ui:Target>
                         </p:CvClickWithDescriptor.Target>
                       </p:CvClickWithDescriptor>
-                      <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (1071,524,14,14)&quot; +&#xD;&#xA;&quot;Anchor: ArrowButton (1101,518,27,27)&quot; +&#xD;&#xA;&quot;Anchor: ArrowButton (1262,659,18,19)&quot;]" DesignTimeCacheId="cdcb11f0-5769-49f4-8ebc-8f275958fa7f" DesignTimeScaleFactor="1" DisplayName="Get total pages" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_4" InformativeScreenshot="ac13d849063182f4375746fdee45fb65" RefreshBefore="True" Result="[totalPages]" Version="V3">
-                        <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                          <uc:CvDescriptor>
-                            <uc:CvDescriptor.Anchors>
-                              <x:Array Type="uc:CvElementDescriptor">
-                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1101, 518, 27, 27" ElementType="ArrowButton" />
-                                <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1262, 659, 18, 19" ElementType="ArrowButton" />
-                              </x:Array>
-                            </uc:CvDescriptor.Anchors>
-                            <uc:CvDescriptor.Target>
-                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1071, 524, 14, 14" ElementType="AnyText" />
-                            </uc:CvDescriptor.Target>
-                          </uc:CvDescriptor>
-                        </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
-                      </p:CvGetTextWithDescriptor>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_70" Level="Trace" Message="[&quot;Total pages: &quot; + totalPages]" />
                     </Sequence>
                   </ActivityAction>
                 </p:CVScope.Body>
@@ -232,7 +202,7 @@
                 <p:CVScope.DesignTimeCacheContainer>
                   <uc:CvCacheContainer>
                     <uc:CvCacheContainer.Caches>
-                      <scg:List x:TypeArguments="uc:CVCache" Capacity="4">
+                      <scg:List x:TypeArguments="uc:CVCache" Capacity="2">
                         <uc:CVCache DisplayName="Screen CV Click - ArrowButton (Main)" Id="3343d727-da2b-42da-a744-9f0d31aa66d4" InformativeScreenshot="bb878a93820db4873dbf9e03338194ec" LogicalPosition="0, 0" OcrText="Ui ACME System 1 - Work Items X + v _ X acme-test.uipath.com/work-items?page=2 ^ ACME System 1 Home Switch to new theme Log Out Work Items Home / Work Items Search Results Please find below your work items. They need to be completed in the order specified by your manager. Actions WIID Description Type Status Date 88083429 Generate Yearly Report for Vendor WI4 Open 2017-09-09 88083439 Process Vendor Invoice WI3 Completed 2019-02-18 88083505 Verify Account Position WI1 Completed 2020-03-29 88083501 Verify Account Position WI1 Completed 2018-01-25 88083434 Process Vendor Invoice WI3 Completed 2020-12-05 88083428 Generate Yearly Report for Vendor WI4 Completed 2021-03-10" Position="0, 0" ScreenshotGuid="b6fb4b63-5ebe-4399-ab47-8b5059cf2f00" ServerVersion="1">
                           <uc:CVCache.CvTables>
                             <x:Array Type="uc:CvTableInfo">
@@ -474,327 +444,6 @@
                             </scg:List>
                           </uc:CVCache.OcrTexts>
                         </uc:CVCache>
-                        <uc:CVCache DisplayName="Screen CV Get Text - ''" Id="cdcb11f0-5769-49f4-8ebc-8f275958fa7f" InformativeScreenshot="2e6424a61b6ec313c7e59b74398c55a1" LogicalPosition="0, 0" OcrText="Ui ACME System 1 - Work Items X + v _ X acme-test.uipath.com/work-items?page=2 ACME System 1 Home Switch to new theme Log Out 88083429 Generate Yearly Report for Vendor WI4 Open 2017-09-09 88083439 Process Vendor Invoice WI3 Completed 2019-02-18 88083505 Verify Account Position WI1 Completed 2020-03-29 88083501 Verify Account Position WI1 Completed 2018-01-25 88083434 Process Vendor Invoice WI3 Completed 2020-12-05 88083428 Generate Yearly Report for Vendor WI4 Completed 2021-03-10 88083482 Research Client Check Copy WI2 Completed 2019-06-27 88083444 Process Vendor Invoice WI3 Completed 2021-03-14 88083441 Process Vendor Invoice WI3 Completed 2019-08-26 88083497 Verify Account Position WI1 Completed 2022-08-11 &lt; 1 3 4 5 6 7 8 9 10 11 &gt; Copyright © 2022 ACME Systems" Position="0, 0" ServerVersion="1">
-                          <uc:CVCache.CvTables>
-                            <x:Array Type="uc:CvTableInfo">
-                              <uc:CvTableInfo>
-                                <uc:CvTableInfo.Columns>
-                                  <x:Array Type="x:Int32">
-                                    <x:Int32>127</x:Int32>
-                                    <x:Int32>260</x:Int32>
-                                    <x:Int32>442</x:Int32>
-                                    <x:Int32>782</x:Int32>
-                                    <x:Int32>873</x:Int32>
-                                    <x:Int32>987</x:Int32>
-                                    <x:Int32>1131</x:Int32>
-                                  </x:Array>
-                                </uc:CvTableInfo.Columns>
-                                <uc:CvTableInfo.Rows>
-                                  <x:Array Type="x:Int32">
-                                    <x:Int32>120</x:Int32>
-                                    <x:Int32>151</x:Int32>
-                                    <x:Int32>189</x:Int32>
-                                    <x:Int32>229</x:Int32>
-                                    <x:Int32>268</x:Int32>
-                                    <x:Int32>308</x:Int32>
-                                    <x:Int32>348</x:Int32>
-                                    <x:Int32>386</x:Int32>
-                                    <x:Int32>425</x:Int32>
-                                    <x:Int32>465</x:Int32>
-                                    <x:Int32>506</x:Int32>
-                                  </x:Array>
-                                </uc:CvTableInfo.Rows>
-                              </uc:CvTableInfo>
-                            </x:Array>
-                          </uc:CVCache.CvTables>
-                          <uc:CVCache.CvUiElements>
-                            <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="256">
-                              <uc:CvElementInfo Category="Button" Region="5, 0, 246, 34" />
-                              <uc:CvElementInfo Category="InputBox" Region="108, 37, 1027, 30" />
-                              <uc:CvElementInfo Category="Icon" Region="1151, 40, 22, 22" />
-                              <uc:CvElementInfo Category="Icon" Region="75, 40, 22, 22" />
-                              <uc:CvElementInfo Category="Icon" Region="1112, 41, 22, 22" />
-                              <uc:CvElementInfo Category="Icon" Region="10, 40, 22, 22" />
-                              <uc:CvElementInfo Category="CloseButton" Region="1248, 5, 18, 18" />
-                              <uc:CvElementInfo Category="Icon" Region="42, 39, 23, 23" />
-                              <uc:CvElementInfo Category="Icon" Region="1080, 41, 21, 21" />
-                              <uc:CvElementInfo Category="Icon" Region="259, 7, 21, 20" />
-                              <uc:CvElementInfo Category="ArrowButton" Region="1262, 70, 18, 19" />
-                              <uc:CvElementInfo Category="Icon" Region="16, 5, 23, 22" />
-                              <uc:CvElementInfo Category="Icon" Region="118, 43, 15, 18" />
-                              <uc:CvElementInfo Category="Icon" Region="1184, 42, 20, 20" />
-                              <uc:CvElementInfo Category="Icon" Region="1213, 38, 26, 26" />
-                              <uc:CvElementInfo Category="Icon" Region="922, 518, 27, 26" />
-                              <uc:CvElementInfo Category="MinimizeButton" Region="1155, 5, 22, 18" />
-                              <uc:CvElementInfo Category="Icon" Region="1065, 519, 26, 26" />
-                              <uc:CvElementInfo Category="MaximizeButton" Region="1201, 4, 19, 19" />
-                              <uc:CvElementInfo Category="Button" Region="162, 436, 26, 24" />
-                              <uc:CvElementInfo Category="ArrowButton" Region="1262, 659, 18, 19" />
-                              <uc:CvElementInfo Category="Button" Region="162, 159, 27, 25" />
-                              <uc:CvElementInfo Category="Button" Region="162, 357, 27, 24" />
-                              <uc:CvElementInfo Category="Icon" Region="1250, 40, 18, 24" />
-                              <uc:CvElementInfo Category="Button" Region="162, 200, 26, 24" />
-                              <uc:CvElementInfo Category="Icon" Region="1029, 519, 25, 25" />
-                              <uc:CvElementInfo Category="CloseButton" Region="223, 8, 17, 18" />
-                              <uc:CvElementInfo Category="Button" Region="162, 239, 27, 24" />
-                              <uc:CvElementInfo Category="Icon" Region="707, 519, 27, 26" />
-                              <uc:CvElementInfo Category="Button" Region="162, 318, 27, 24" />
-                              <uc:CvElementInfo Category="Button" Region="162, 277, 27, 25" />
-                              <uc:CvElementInfo Category="Button" Region="162, 397, 27, 24" />
-                              <uc:CvElementInfo Category="Button" Region="162, 475, 26, 24" />
-                              <uc:CvElementInfo Category="Button" Region="191, 436, 24, 23" />
-                              <uc:CvElementInfo Category="ArrowButton" Region="1109, 5, 21, 18" />
-                              <uc:CvElementInfo Category="Icon" Region="886, 518, 26, 26" />
-                              <uc:CvElementInfo Category="Icon" Region="850, 518, 26, 26" />
-                              <uc:CvElementInfo Category="Icon" Region="813, 519, 27, 25" />
-                              <uc:CvElementInfo Category="Button" Region="190, 397, 24, 23" />
-                              <uc:CvElementInfo Category="Icon" Region="958, 518, 26, 26" />
-                              <uc:CvElementInfo Category="Icon" Region="993, 519, 26, 26" />
-                              <uc:CvElementInfo Category="Icon" Region="166, 203, 18, 17" />
-                              <uc:CvElementInfo Category="Icon" Region="167, 439, 18, 17" />
-                              <uc:CvElementInfo Category="Icon" Region="741, 518, 28, 27" />
-                              <uc:CvElementInfo Category="Icon" Region="166, 478, 18, 18" />
-                              <uc:CvElementInfo Category="Button" Region="191, 200, 24, 24" />
-                              <uc:CvElementInfo Category="Icon" Region="778, 518, 26, 26" />
-                              <uc:CvElementInfo Category="Icon" Region="166, 163, 19, 18" />
-                              <uc:CvElementInfo Category="Icon" Region="166, 242, 19, 18" />
-                              <uc:CvElementInfo Category="Icon" Region="166, 321, 19, 18" />
-                              <uc:CvElementInfo Category="Icon" Region="166, 400, 18, 17" />
-                              <uc:CvElementInfo Category="Icon" Region="166, 281, 19, 18" />
-                              <uc:CvElementInfo Category="Icon" Region="164, 122, 24, 21" />
-                              <uc:CvElementInfo Category="Button" Region="190, 160, 24, 24" />
-                              <uc:CvElementInfo Category="Button" Region="190, 357, 24, 23" />
-                              <uc:CvElementInfo Category="Icon" Region="166, 360, 18, 18" />
-                              <uc:CvElementInfo Category="Button" Region="190, 238, 24, 24" />
-                              <uc:CvElementInfo Category="ArrowButton" Region="671, 519, 26, 27" />
-                              <uc:CvElementInfo Category="Icon" Region="193, 399, 19, 19" />
-                              <uc:CvElementInfo Category="Button" Region="190, 318, 24, 24" />
-                              <uc:CvElementInfo Category="ArrowButton" Region="1101, 518, 27, 27" />
-                              <uc:CvElementInfo Category="Button" Region="191, 475, 24, 24" />
-                              <uc:CvElementInfo Category="Button" Region="190, 278, 24, 24" />
-                              <uc:CvElementInfo Category="Icon" Region="193, 241, 19, 19" />
-                              <uc:CvElementInfo Category="Icon" Region="194, 202, 18, 19" />
-                              <uc:CvElementInfo Category="Icon" Region="193, 358, 19, 20" />
-                              <uc:CvElementInfo Category="Icon" Region="193, 161, 19, 20" />
-                              <uc:CvElementInfo Category="Icon" Region="191, 121, 24, 23" />
-                              <uc:CvElementInfo Category="Icon" Region="193, 438, 18, 19" />
-                              <uc:CvElementInfo Category="Icon" Region="193, 279, 20, 21" />
-                              <uc:CvElementInfo Category="Icon" Region="194, 320, 18, 18" />
-                              <uc:CvElementInfo Category="Cell" Region="127, 465, 133, 41" />
-                              <uc:CvElementInfo Category="Cell" Region="127, 348, 133, 38" />
-                              <uc:CvElementInfo Category="Cell" Region="127, 425, 133, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="127, 386, 133, 39" />
-                              <uc:CvElementInfo Category="Cell" Region="987, 229, 144, 39" />
-                              <uc:CvElementInfo Category="Cell" Region="987, 268, 144, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="127, 268, 133, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="987, 189, 144, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="987, 151, 144, 38" />
-                              <uc:CvElementInfo Category="Cell" Region="127, 189, 133, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="127, 308, 133, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="127, 229, 133, 39" />
-                              <uc:CvElementInfo Category="Cell" Region="442, 189, 340, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="442, 151, 340, 38" />
-                              <uc:CvElementInfo Category="Cell" Region="127, 151, 133, 38" />
-                              <uc:CvElementInfo Category="Cell" Region="442, 465, 340, 41" />
-                              <uc:CvElementInfo Category="Cell" Region="442, 120, 340, 31" />
-                              <uc:CvElementInfo Category="Cell" Region="442, 229, 340, 39" />
-                              <uc:CvElementInfo Category="Cell" Region="260, 189, 182, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="986, 66, 150, 54" />
-                              <uc:CvElementInfo Category="Cell" Region="260, 151, 182, 38" />
-                              <uc:CvElementInfo Category="Cell" Region="873, 189, 114, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="442, 308, 340, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="442, 268, 340, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="442, 348, 340, 38" />
-                              <uc:CvElementInfo Category="Cell" Region="987, 386, 144, 39" />
-                              <uc:CvElementInfo Category="Cell" Region="260, 348, 182, 38" />
-                              <uc:CvElementInfo Category="Cell" Region="987, 425, 144, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="873, 229, 114, 39" />
-                              <uc:CvElementInfo Category="Cell" Region="442, 386, 340, 39" />
-                              <uc:CvElementInfo Category="Cell" Region="260, 268, 182, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="260, 229, 182, 39" />
-                              <uc:CvElementInfo Category="Cell" Region="873, 268, 114, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="442, 425, 340, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="987, 348, 144, 38" />
-                              <uc:CvElementInfo Category="Cell" Region="987, 120, 144, 31" />
-                              <uc:CvElementInfo Category="Cell" Region="260, 120, 182, 31" />
-                              <uc:CvElementInfo Category="Cell" Region="873, 151, 114, 38" />
-                              <uc:CvElementInfo Category="Cell" Region="782, 151, 91, 38" />
-                              <uc:CvElementInfo Category="Cell" Region="260, 308, 182, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="260, 386, 182, 39" />
-                              <uc:CvElementInfo Category="Cell" Region="873, 425, 114, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="782, 425, 91, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="987, 465, 144, 41" />
-                              <uc:CvElementInfo Category="Cell" Region="782, 189, 91, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="873, 386, 114, 39" />
-                              <uc:CvElementInfo Category="Cell" Region="873, 120, 114, 31" />
-                              <uc:CvElementInfo Category="Cell" Region="260, 425, 182, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="987, 308, 144, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="883, 67, 104, 53" />
-                              <uc:CvElementInfo Category="Cell" Region="260, 465, 182, 41" />
-                              <uc:CvElementInfo Category="Cell" Region="873, 348, 114, 38" />
-                              <uc:CvElementInfo Category="Cell" Region="782, 465, 91, 41" />
-                              <uc:CvElementInfo Category="Cell" Region="873, 308, 114, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="873, 465, 114, 41" />
-                              <uc:CvElementInfo Category="Cell" Region="782, 229, 91, 39" />
-                              <uc:CvElementInfo Category="Cell" Region="782, 120, 91, 31" />
-                              <uc:CvElementInfo Category="Cell" Region="782, 308, 91, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="782, 268, 91, 40" />
-                              <uc:CvElementInfo Category="Cell" Region="782, 386, 91, 39" />
-                              <uc:CvElementInfo Category="Cell" Region="782, 348, 91, 38" />
-                              <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="162, 121, 26, 24" />
-                              <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="193, 477, 19, 20" />
-                              <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="669, 518, 29, 28" />
-                              <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="1099, 518, 29, 27" />
-                              <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1100, 519, 28, 28" />
-                              <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="190, 121, 24, 24" />
-                              <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="742, 518, 28, 27" />
-                              <uc:CvElementInfo Category="CheckBox" Confidence="Runtime" Region="191, 122, 23, 23" />
-                              <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="670, 520, 27, 26" />
-                              <uc:CvElementInfo Category="CheckBox" Confidence="Runtime" Region="191, 475, 23, 23" />
-                              <uc:CvElementInfo Category="CheckBox" Confidence="Runtime" Region="193, 241, 18, 19" />
-                              <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1213, 39, 25, 25" />
-                              <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="163, 122, 25, 22" />
-                              <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="958, 519, 26, 25" />
-                              <uc:CvElementInfo Category="CheckBox" Confidence="Runtime" Region="193, 280, 19, 20" />
-                              <uc:CvElementInfo Category="CheckBox" Confidence="Runtime" Region="191, 437, 23, 23" />
-                              <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="814, 519, 26, 25" />
-                              <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="814, 519, 26, 24" />
-                              <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="742, 518, 28, 26" />
-                              <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="886, 519, 25, 25" />
-                              <uc:CvElementInfo Category="CheckBox" Confidence="Runtime" Region="193, 320, 18, 19" />
-                              <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="994, 519, 25, 24" />
-                              <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="191, 121, 24, 24" />
-                              <uc:CvElementInfo Category="CheckBox" Confidence="Runtime" Region="191, 160, 23, 23" />
-                              <uc:CvElementInfo Category="CheckBox" Confidence="Runtime" Region="192, 359, 19, 20" />
-                              <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="993, 519, 26, 26" />
-                              <uc:CvElementInfo Category="CheckBox" Confidence="Runtime" Region="192, 399, 20, 20" />
-                              <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="1109, 5, 20, 17" />
-                              <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="127, 120, 133, 31" />
-                              <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="149, 68, 737, 52" />
-                              <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="772, 67, 115, 54" />
-                              <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="88, 66, 172, 54" />
-                            </scg:List>
-                          </uc:CVCache.CvUiElements>
-                          <uc:CVCache.OcrTexts>
-                            <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="128">
-                              <uc:OcrTextInfo Region="21, 10, 13, 12" Text="Ui" />
-                              <uc:OcrTextInfo Region="42, 10, 34, 12" Text="ACME" />
-                              <uc:OcrTextInfo Region="78, 10, 39, 15" Text="System" />
-                              <uc:OcrTextInfo Region="119, 10, 7, 12" Text="1" />
-                              <uc:OcrTextInfo Region="129, 11, 6, 11" Text="-" />
-                              <uc:OcrTextInfo Region="136, 10, 31, 12" Text="Work" />
-                              <uc:OcrTextInfo Region="168, 10, 30, 12" Text="Items" />
-                              <uc:OcrTextInfo Region="226, 11, 11, 10" Text="X" />
-                              <uc:OcrTextInfo Region="262, 9, 14, 15" Text="+" />
-                              <uc:OcrTextInfo Region="1111, 8, 14, 10" Text="v" />
-                              <uc:OcrTextInfo Region="1158, 3, 13, 13" Text="_" />
-                              <uc:OcrTextInfo Region="1250, 7, 13, 13" Text="X" />
-                              <uc:OcrTextInfo Region="141, 44, 265, 17" Text="acme-test.uipath.com/work-items?page=2" />
-                              <uc:OcrTextInfo Region="59, 87, 55, 16" Text="ACME" />
-                              <uc:OcrTextInfo Region="117, 87, 62, 20" Text="System" />
-                              <uc:OcrTextInfo Region="183, 87, 9, 16" Text="1" />
-                              <uc:OcrTextInfo Region="924, 89, 39, 13" Text="Home" />
-                              <uc:OcrTextInfo Region="991, 89, 43, 13" Text="Switch" />
-                              <uc:OcrTextInfo Region="1036, 89, 14, 13" Text="to" />
-                              <uc:OcrTextInfo Region="1052, 91, 28, 11" Text="new" />
-                              <uc:OcrTextInfo Region="1081, 89, 42, 13" Text="theme" />
-                              <uc:OcrTextInfo Region="1151, 89, 24, 16" Text="Log" />
-                              <uc:OcrTextInfo Region="1178, 89, 25, 13" Text="Out" />
-                              <uc:OcrTextInfo Region="279, 125, 64, 13" Text="88083429" />
-                              <uc:OcrTextInfo Region="461, 125, 61, 13" Text="Generate" />
-                              <uc:OcrTextInfo Region="523, 125, 41, 16" Text="Yearly" />
-                              <uc:OcrTextInfo Region="566, 125, 44, 16" Text="Report" />
-                              <uc:OcrTextInfo Region="611, 125, 19, 13" Text="for" />
-                              <uc:OcrTextInfo Region="631, 125, 48, 13" Text="Vendor" />
-                              <uc:OcrTextInfo Region="789, 125, 27, 13" Text="WI4" />
-                              <uc:OcrTextInfo Region="895, 125, 36, 16" Text="Open" />
-                              <uc:OcrTextInfo Region="1020, 125, 73, 13" Text="2017-09-09" />
-                              <uc:OcrTextInfo Region="279, 164, 63, 13" Text="88083439" />
-                              <uc:OcrTextInfo Region="496, 164, 51, 13" Text="Process" />
-                              <uc:OcrTextInfo Region="549, 164, 48, 13" Text="Vendor" />
-                              <uc:OcrTextInfo Region="598, 164, 46, 13" Text="Invoice" />
-                              <uc:OcrTextInfo Region="789, 164, 27, 13" Text="WI3" />
-                              <uc:OcrTextInfo Region="878, 164, 70, 16" Text="Completed" />
-                              <uc:OcrTextInfo Region="1019, 164, 74, 13" Text="2019-02-18" />
-                              <uc:OcrTextInfo Region="278, 203, 64, 13" Text="88083505" />
-                              <uc:OcrTextInfo Region="497, 202, 38, 17" Text="Verify" />
-                              <uc:OcrTextInfo Region="535, 203, 54, 13" Text="Account" />
-                              <uc:OcrTextInfo Region="591, 203, 51, 13" Text="Position" />
-                              <uc:OcrTextInfo Region="789, 203, 26, 13" Text="WI1" />
-                              <uc:OcrTextInfo Region="878, 203, 70, 16" Text="Completed" />
-                              <uc:OcrTextInfo Region="1020, 203, 73, 13" Text="2020-03-29" />
-                              <uc:OcrTextInfo Region="278, 243, 63, 13" Text="88083501" />
-                              <uc:OcrTextInfo Region="497, 243, 38, 16" Text="Verify" />
-                              <uc:OcrTextInfo Region="535, 243, 54, 13" Text="Account" />
-                              <uc:OcrTextInfo Region="591, 243, 51, 13" Text="Position" />
-                              <uc:OcrTextInfo Region="789, 243, 26, 13" Text="WI1" />
-                              <uc:OcrTextInfo Region="878, 243, 70, 16" Text="Completed" />
-                              <uc:OcrTextInfo Region="1020, 243, 73, 13" Text="2018-01-25" />
-                              <uc:OcrTextInfo Region="278, 282, 65, 13" Text="88083434" />
-                              <uc:OcrTextInfo Region="496, 282, 52, 13" Text="Process" />
-                              <uc:OcrTextInfo Region="549, 282, 48, 13" Text="Vendor" />
-                              <uc:OcrTextInfo Region="598, 282, 46, 13" Text="Invoice" />
-                              <uc:OcrTextInfo Region="789, 282, 27, 13" Text="WI3" />
-                              <uc:OcrTextInfo Region="878, 282, 70, 16" Text="Completed" />
-                              <uc:OcrTextInfo Region="1020, 282, 73, 13" Text="2020-12-05" />
-                              <uc:OcrTextInfo Region="279, 321, 63, 13" Text="88083428" />
-                              <uc:OcrTextInfo Region="462, 321, 60, 13" Text="Generate" />
-                              <uc:OcrTextInfo Region="523, 321, 41, 16" Text="Yearly" />
-                              <uc:OcrTextInfo Region="566, 321, 44, 16" Text="Report" />
-                              <uc:OcrTextInfo Region="611, 321, 19, 13" Text="for" />
-                              <uc:OcrTextInfo Region="631, 321, 48, 13" Text="Vendor" />
-                              <uc:OcrTextInfo Region="789, 321, 27, 13" Text="WI4" />
-                              <uc:OcrTextInfo Region="878, 321, 70, 16" Text="Completed" />
-                              <uc:OcrTextInfo Region="1020, 321, 73, 13" Text="2021-03-10" />
-                              <uc:OcrTextInfo Region="278, 361, 65, 13" Text="88083482" />
-                              <uc:OcrTextInfo Region="479, 361, 62, 13" Text="Research" />
-                              <uc:OcrTextInfo Region="543, 361, 38, 13" Text="Client" />
-                              <uc:OcrTextInfo Region="583, 361, 42, 13" Text="Check" />
-                              <uc:OcrTextInfo Region="626, 361, 35, 16" Text="Copy" />
-                              <uc:OcrTextInfo Region="789, 361, 27, 13" Text="WI2" />
-                              <uc:OcrTextInfo Region="878, 361, 70, 16" Text="Completed" />
-                              <uc:OcrTextInfo Region="1019, 361, 74, 13" Text="2019-06-27" />
-                              <uc:OcrTextInfo Region="279, 400, 64, 13" Text="88083444" />
-                              <uc:OcrTextInfo Region="496, 400, 52, 13" Text="Process" />
-                              <uc:OcrTextInfo Region="549, 400, 48, 13" Text="Vendor" />
-                              <uc:OcrTextInfo Region="599, 400, 45, 13" Text="Invoice" />
-                              <uc:OcrTextInfo Region="789, 400, 27, 13" Text="WI3" />
-                              <uc:OcrTextInfo Region="878, 400, 70, 16" Text="Completed" />
-                              <uc:OcrTextInfo Region="1019, 400, 74, 13" Text="2021-03-14" />
-                              <uc:OcrTextInfo Region="279, 440, 62, 13" Text="88083441" />
-                              <uc:OcrTextInfo Region="496, 440, 51, 13" Text="Process" />
-                              <uc:OcrTextInfo Region="549, 440, 48, 13" Text="Vendor" />
-                              <uc:OcrTextInfo Region="599, 440, 45, 13" Text="Invoice" />
-                              <uc:OcrTextInfo Region="789, 440, 27, 13" Text="WI3" />
-                              <uc:OcrTextInfo Region="878, 440, 70, 16" Text="Completed" />
-                              <uc:OcrTextInfo Region="1019, 440, 74, 13" Text="2019-08-26" />
-                              <uc:OcrTextInfo Region="278, 479, 65, 13" Text="88083497" />
-                              <uc:OcrTextInfo Region="497, 478, 37, 17" Text="Verify" />
-                              <uc:OcrTextInfo Region="535, 479, 54, 13" Text="Account" />
-                              <uc:OcrTextInfo Region="591, 479, 51, 13" Text="Position" />
-                              <uc:OcrTextInfo Region="789, 479, 26, 13" Text="WI1" />
-                              <uc:OcrTextInfo Region="878, 478, 70, 17" Text="Completed" />
-                              <uc:OcrTextInfo Region="1020, 479, 71, 13" Text="2022-08-11" />
-                              <uc:OcrTextInfo Region="679, 527, 9, 9" Text="&lt;" />
-                              <uc:OcrTextInfo Region="715, 525, 8, 13" Text="1" />
-                              <uc:OcrTextInfo Region="786, 525, 10, 13" Text="3" />
-                              <uc:OcrTextInfo Region="822, 525, 9, 13" Text="4" />
-                              <uc:OcrTextInfo Region="858, 525, 9, 13" Text="5" />
-                              <uc:OcrTextInfo Region="894, 525, 9, 13" Text="6" />
-                              <uc:OcrTextInfo Region="930, 525, 10, 13" Text="7" />
-                              <uc:OcrTextInfo Region="966, 525, 9, 13" Text="8" />
-                              <uc:OcrTextInfo Region="1001, 525, 10, 13" Text="9" />
-                              <uc:OcrTextInfo Region="1034, 524, 18, 14" Text="10" />
-                              <uc:OcrTextInfo Region="1071, 524, 14, 14" Text="11" />
-                              <uc:OcrTextInfo Region="1109, 526, 10, 11" Text="&gt;" />
-                              <uc:OcrTextInfo Region="130, 601, 63, 16" Text="Copyright" />
-                              <uc:OcrTextInfo Region="193, 601, 14, 13" Text="©" />
-                              <uc:OcrTextInfo Region="208, 601, 33, 13" Text="2022" />
-                              <uc:OcrTextInfo Region="242, 601, 43, 13" Text="ACME" />
-                              <uc:OcrTextInfo Region="287, 601, 55, 16" Text="Systems" />
-                            </scg:List>
-                          </uc:CVCache.OcrTexts>
-                        </uc:CVCache>
                       </scg:List>
                     </uc:CvCacheContainer.Caches>
                   </uc:CvCacheContainer>
@@ -826,7 +475,7 @@
               </p:CVScope>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -837,7 +486,7 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                   </ActivityAction.Argument>
-                  <Throw sap2010:Annotation.AnnotationText="New SystemException(&quot;LANDING_PAGE_IS_INVALID&quot;)" DisplayName="Throw - LANDING_PAGE_IS_INVALID" Exception="[New SystemException(&quot;LANDING_PAGE_IS_INVALID&quot;)]" sap:VirtualizedContainerService.HintSize="200,79" sap2010:WorkflowViewState.IdRef="Throw_10">
+                  <Throw sap2010:Annotation.AnnotationText="New SystemException(&quot;LANDING_PAGE_IS_INVALID&quot;)" DisplayName="Throw - LANDING_PAGE_IS_INVALID" Exception="[New SystemException(&quot;LANDING_PAGE_IS_INVALID&quot;)]" sap:VirtualizedContainerService.HintSize="200,82" sap2010:WorkflowViewState.IdRef="Throw_10">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -848,40 +497,40 @@
               </Catch>
             </TryCatch.Catches>
           </TryCatch>
-          <TryCatch sap2010:Annotation.AnnotationText="Generate and fill WorkItems Datatable" DisplayName="Get Work Items" sap:VirtualizedContainerService.HintSize="642,4632" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+          <TryCatch sap2010:Annotation.AnnotationText="Generate and fill WorkItems Datatable" DisplayName="Get Work Items" sap:VirtualizedContainerService.HintSize="947,4084" sap2010:WorkflowViewState.IdRef="TryCatch_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <Sequence DisplayName="Create and fill output datatable" sap:VirtualizedContainerService.HintSize="604,4330" sap2010:WorkflowViewState.IdRef="Sequence_59">
+              <Sequence DisplayName="Create and fill output datatable" sap:VirtualizedContainerService.HintSize="909,3775" sap2010:WorkflowViewState.IdRef="Sequence_59">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:InterruptibleDoWhile Condition="[counter &lt;= CInt(totalPages)]" DisplayName="Do While counter &lt;= totalPages" sap:VirtualizedContainerService.HintSize="562,3057" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_5">
+                <ui:InterruptibleDoWhile DisplayName="Do While nextButton exists" sap:VirtualizedContainerService.HintSize="867,3239" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_5">
                   <ui:InterruptibleDoWhile.Body>
-                    <Sequence DisplayName="Get work items page by page" sap:VirtualizedContainerService.HintSize="526,2892" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                    <Sequence DisplayName="Get work items page by page" sap:VirtualizedContainerService.HintSize="831,3072" sap2010:WorkflowViewState.IdRef="Sequence_58">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_73" Level="Trace" Message="[&quot;Extracting data form page: &quot; + counter.ToString]" />
-                      <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" sap2010:Annotation.AnnotationText="Goes to the bottom of the table and then clicks one time up to get the headers of the table" CvMethod="ElementDetection, OCR" DesignTimeCacheId="30aec03d-8cf5-4c1e-83e2-d80ecbf6c57e" DisplayName="Make the table visible" sap:VirtualizedContainerService.HintSize="484,649" sap2010:WorkflowViewState.IdRef="CVScope_20" Version="V3">
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="789,93" sap2010:WorkflowViewState.IdRef="LogMessage_73" Level="Trace" Message="[&quot;Extracting data form page: &quot; + counter.ToString]" />
+                      <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" sap2010:Annotation.AnnotationText="Goes to the bottom of the table and then clicks one time up to get the headers of the table" CvMethod="ElementDetection, OCR" DesignTimeCacheId="30aec03d-8cf5-4c1e-83e2-d80ecbf6c57e" DisplayName="Make the table visible" sap:VirtualizedContainerService.HintSize="789,653" sap2010:WorkflowViewState.IdRef="CVScope_20" Version="V3">
                         <p:CVScope.Body>
                           <ActivityAction x:TypeArguments="x:Object">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                             </ActivityAction.Argument>
                             <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_55">
-                              <p:CvClickWithDescriptor DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" DelayBefore="2000" Descriptor="[&quot;Target: ArrowButton (1262,659,18,18) OffsetPoint: (1,-44)&quot; +&#xA;&quot;Anchor: ArrowButton (1261,69,19,20)&quot;]" DesignTimeCacheId="8609e132-6798-432a-8870-340ee8b0e847" DesignTimeScaleFactor="1" DisplayName="CV Click Bottom Arrow" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_25" InformativeScreenshot="c995d004e044ebca7acd0a5feade18df" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                              <p:CvClickWithDescriptor DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_DOUBLE" DelayBefore="2000" Descriptor="[&quot;Target: ArrowButton (1262,659,18,18) OffsetPoint: (1,-44)&quot; +&#xA;&quot;Anchor: ArrowButton (1261,69,19,20)&quot;]" DesignTimeCacheId="8609e132-6798-432a-8870-340ee8b0e847" DesignTimeScaleFactor="1" DisplayName="CV Click Bottom Arrow" sap:VirtualizedContainerService.HintSize="400,137" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_25" InformativeScreenshot="c995d004e044ebca7acd0a5feade18df" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
                                 <p:CvClickWithDescriptor.CursorPosition>
                                   <ui:CursorPosition Position="Center">
                                     <ui:CursorPosition.OffsetX>
@@ -915,7 +564,7 @@
                                   </ui:Target>
                                 </p:CvClickWithDescriptor.Target>
                               </p:CvClickWithDescriptor>
-                              <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: ArrowButton (1262,70,18,19)&quot; +&#xA;&quot;Anchor: ArrowButton (1262,659,18,19)&quot;]" DesignTimeCacheId="ed572f63-4e3d-4a88-9388-7873a779b0a7" DesignTimeScaleFactor="1" DisplayName="CV Click - ArrowButton" sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_26" InformativeScreenshot="ed53ecbcc217ae746f46c6aa203625b2" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                              <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: ArrowButton (1262,70,18,19)&quot; +&#xA;&quot;Anchor: ArrowButton (1262,659,18,19)&quot;]" DesignTimeCacheId="ed572f63-4e3d-4a88-9388-7873a779b0a7" DesignTimeScaleFactor="1" DisplayName="CV Click Up arrow" sap:VirtualizedContainerService.HintSize="400,137" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_26" InformativeScreenshot="ed53ecbcc217ae746f46c6aa203625b2" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
                                 <p:CvClickWithDescriptor.CursorPosition>
                                   <ui:CursorPosition Position="Center">
                                     <ui:CursorPosition.OffsetX>
@@ -1785,7 +1434,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </p:CVScope>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ACME_Extract_WorkItems workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="ACME\ExtractWorkItems.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ACME_Extract_WorkItems workflow" sap:VirtualizedContainerService.HintSize="789,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="ACME\ExtractWorkItems.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <OutArgument x:TypeArguments="sd:DataTable" x:Key="WorkItemsDT">[tempWorkItemsDT]</OutArgument>
                         </ui:InvokeWorkflowFile.Arguments>
@@ -1796,22 +1445,22 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:InvokeWorkflowFile>
-                      <If sap2010:Annotation.AnnotationText="If it is the first page, once the table is extracted the fromat is cloned to another datatable that will gather all the work items from all the pages" Condition="[counter = 1]" DisplayName="If first page " sap:VirtualizedContainerService.HintSize="484,542" sap2010:WorkflowViewState.IdRef="If_13">
+                      <If sap2010:Annotation.AnnotationText="If it is the first page, once the table is extracted the fromat is cloned to another datatable that will gather all the work items from all the pages" Condition="[counter = 1]" DisplayName="If first page " sap:VirtualizedContainerService.HintSize="789,160" sap2010:WorkflowViewState.IdRef="If_13">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
-                          <Sequence DisplayName="If first page (Datatable) - then" sap:VirtualizedContainerService.HintSize="376,314" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                          <Sequence DisplayName="If first page (Datatable) - then" sap:VirtualizedContainerService.HintSize="376,316" sap2010:WorkflowViewState.IdRef="Sequence_56">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_74" Level="Trace" Message="[&quot;First page, clone datatable&quot;]" />
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_74" Level="Trace" Message="[&quot;First page, clone datatable&quot;]" />
                             <Assign sap2010:Annotation.AnnotationText="Clone tempWorkItemsDT" DisplayName="Assign Clone WorkItemsDT" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="Assign_17">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="sd:DataTable">[ToFilterDT]</OutArgument>
@@ -1828,7 +1477,7 @@
                           </Sequence>
                         </If.Then>
                       </If>
-                      <ui:MergeDataTable Destination="[ToFilterDT]" DisplayName="Merge current Data Table" sap:VirtualizedContainerService.HintSize="484,132" sap2010:WorkflowViewState.IdRef="MergeDataTable_10" MissingSchemaAction="Add" Source="[tempWorkItemsDT]">
+                      <ui:MergeDataTable Destination="[ToFilterDT]" DisplayName="Merge current Data Table" sap:VirtualizedContainerService.HintSize="789,134" sap2010:WorkflowViewState.IdRef="MergeDataTable_10" MissingSchemaAction="Add" Source="[tempWorkItemsDT]">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1836,8 +1485,8 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:MergeDataTable>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_75" Level="Trace" Message="[&quot;Temporal datatable merged with main datatable&quot;]" />
-                      <ui:ClearDataTable DataTable="[tempWorkItemsDT]" DisplayName="Clear Temp Data Table" sap:VirtualizedContainerService.HintSize="484,79" sap2010:WorkflowViewState.IdRef="ClearDataTable_6">
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="789,93" sap2010:WorkflowViewState.IdRef="LogMessage_75" Level="Trace" Message="[&quot;Temporal datatable merged with main datatable&quot;]" />
+                      <ui:ClearDataTable DataTable="[tempWorkItemsDT]" DisplayName="Clear Temp Data Table" sap:VirtualizedContainerService.HintSize="789,80" sap2010:WorkflowViewState.IdRef="ClearDataTable_6">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1845,8 +1494,8 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:ClearDataTable>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_76" Level="Trace" Message="[&quot;Increasing counter...&quot;]" />
-                      <Assign sap2010:Annotation.AnnotationText="Increase counter" DisplayName="Assign counter = counter+1" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="Assign_18">
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="789,93" sap2010:WorkflowViewState.IdRef="LogMessage_76" Level="Trace" Message="[&quot;Increasing counter...&quot;]" />
+                      <Assign sap2010:Annotation.AnnotationText="Increase counter" DisplayName="Assign counter = counter+1" sap:VirtualizedContainerService.HintSize="789,91" sap2010:WorkflowViewState.IdRef="Assign_18">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
                         </Assign.To>
@@ -1859,55 +1508,85 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </Assign>
-                      <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="d332b3d1-17da-459b-b6d8-1fcbb3d3b755" DisplayName="Go to next page" sap:VirtualizedContainerService.HintSize="484,562" sap2010:WorkflowViewState.IdRef="CVScope_21" Version="V3">
+                      <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="d332b3d1-17da-459b-b6d8-1fcbb3d3b755" DisplayName="Go to next page" sap:VirtualizedContainerService.HintSize="789,1110" sap2010:WorkflowViewState.IdRef="CVScope_21" Version="V3">
                         <p:CVScope.Body>
                           <ActivityAction x:TypeArguments="x:Object">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                             </ActivityAction.Argument>
                             <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_57">
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="400,91" sap2010:WorkflowViewState.IdRef="LogMessage_77" Level="Trace" Message="[&quot;Going to next page...&quot;]" />
-                              <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: ArrowButton (1101,448,28,27)&quot; +&#xA;&quot;Anchor: Text 'Copyright © 2022 ACME Systems' (130,530,212,16)&quot; +&#xA;&quot;Anchor: Text 'Log Out' (1150,18,52,16)&quot;]" DesignTimeCacheId="d332b3d1-17da-459b-b6d8-1fcbb3d3b755" DesignTimeScaleFactor="1" DisplayName="CV Click Next Page" sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_27" InformativeScreenshot="4c32accb52ad1728681e4f3ff099f26d" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
-                                <p:CvClickWithDescriptor.CursorPosition>
-                                  <ui:CursorPosition Position="Center">
-                                    <ui:CursorPosition.OffsetX>
-                                      <InArgument x:TypeArguments="x:Int32" />
-                                    </ui:CursorPosition.OffsetX>
-                                    <ui:CursorPosition.OffsetY>
-                                      <InArgument x:TypeArguments="x:Int32" />
-                                    </ui:CursorPosition.OffsetY>
-                                  </ui:CursorPosition>
-                                </p:CvClickWithDescriptor.CursorPosition>
-                                <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="755,93" sap2010:WorkflowViewState.IdRef="LogMessage_77" Level="Trace" Message="[&quot;Going to next page...&quot;]" />
+                              <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Icon (1100,518,28,29)&quot; +&#xA;&quot;Anchor: ArrowButton (1262,659,18,19)&quot; +&#xA;&quot;Anchor: ArrowButton (1262,70,18,19)&quot;]" DesignTimeCacheId="d332b3d1-17da-459b-b6d8-1fcbb3d3b755" DesignTimeScaleFactor="1" DisplayName="Next button exists?" sap:VirtualizedContainerService.HintSize="755,137" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_2" InformativeScreenshot="7169e2d89860f1556092eeb69872b392" Result="[NextButton]" Version="V3">
+                                <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                                   <uc:CvDescriptor>
                                     <uc:CvDescriptor.Anchors>
                                       <x:Array Type="uc:CvElementDescriptor">
-                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="130, 530, 212, 16" ElementType="Text" Text="Copyright © 2022 ACME Systems" />
-                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1150, 18, 52, 16" ElementType="Text" Text="Log Out" />
+                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1262, 659, 18, 19" ElementType="ArrowButton" />
+                                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1262, 70, 18, 19" ElementType="ArrowButton" />
                                       </x:Array>
                                     </uc:CvDescriptor.Anchors>
                                     <uc:CvDescriptor.Target>
-                                      <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1101, 448, 28, 27" ElementType="ArrowButton" />
+                                      <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1100, 518, 28, 29" ElementType="Icon" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAdCAYAAAC5UQwxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEVSURBVEhL7ZbtCoMwDEX3/m+qIsjwA5GZcRwRadPoqvjLCxfENjlLmspecrMe4Kp5nqXrOmmaRqqqkqIoFvPMu2EYlj172gWSpG1bKctyhaTMHvZ6YBdIYF3XZnLPxKSgSSABR6pKmVgLagJzKwttVWoCOQcrQY7JtVUEPNvK0GFrIyCjbwWeMVdGFQG5U1YQ7ieRqbfXPJNTFQG3l9oy0EVTb65bZnhUEdAKsPweP7+AzyhvYz20Khu4mpIPQFV/t1T9T4VuS72hwTln6A4NI2wF4dwpda/F7Rcf3fppQ/yiWz/e6Gxrw1aqkkCUW6lVmcoFIgI5hyPVsoe9KRjaBapIwnhzp7ZV88y7y/5EXa0HeLFEvtRiRjMZ7Pu+AAAAAElFTkSuQmCC" />
                                     </uc:CvDescriptor.Target>
                                   </uc:CvDescriptor>
-                                </p:CvClickWithDescriptor.DesignTimeDescriptor>
-                                <p:CvClickWithDescriptor.Target>
-                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="27f3e103-37ca-45b8-b1ad-b503164ca110">
-                                    <ui:Target.TimeoutMS>
-                                      <InArgument x:TypeArguments="x:Int32" />
-                                    </ui:Target.TimeoutMS>
-                                    <ui:Target.WaitForReady>
-                                      <InArgument x:TypeArguments="ui:WaitForReady" />
-                                    </ui:Target.WaitForReady>
-                                  </ui:Target>
-                                </p:CvClickWithDescriptor.Target>
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </p:CvClickWithDescriptor>
+                                </p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                              </p:CvElementExistsWithDescriptor>
+                              <If Condition="[NextButton]" DisplayName="If Next button exists" sap:VirtualizedContainerService.HintSize="755,521" sap2010:WorkflowViewState.IdRef="If_14">
+                                <If.Then>
+                                  <Sequence DisplayName="If Next button exists - then" sap:VirtualizedContainerService.HintSize="376,362" sap2010:WorkflowViewState.IdRef="Sequence_66">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_82" Level="Trace" Message="[&quot;Clicking next page...&quot;]" />
+                                    <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: ArrowButton (1101,448,28,27)&quot; +&#xA;&quot;Anchor: Text 'Copyright © 2022 ACME Systems' (130,530,212,16)&quot; +&#xA;&quot;Anchor: Text 'Log Out' (1150,18,52,16)&quot;]" DesignTimeCacheId="d332b3d1-17da-459b-b6d8-1fcbb3d3b755" DesignTimeScaleFactor="1" DisplayName="CV Click Next Page" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_27" InformativeScreenshot="4c32accb52ad1728681e4f3ff099f26d" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                                      <p:CvClickWithDescriptor.CursorPosition>
+                                        <ui:CursorPosition Position="Center">
+                                          <ui:CursorPosition.OffsetX>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:CursorPosition.OffsetX>
+                                          <ui:CursorPosition.OffsetY>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:CursorPosition.OffsetY>
+                                        </ui:CursorPosition>
+                                      </p:CvClickWithDescriptor.CursorPosition>
+                                      <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                                        <uc:CvDescriptor>
+                                          <uc:CvDescriptor.Anchors>
+                                            <x:Array Type="uc:CvElementDescriptor">
+                                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="130, 530, 212, 16" ElementType="Text" Text="Copyright © 2022 ACME Systems" />
+                                              <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1150, 18, 52, 16" ElementType="Text" Text="Log Out" />
+                                            </x:Array>
+                                          </uc:CvDescriptor.Anchors>
+                                          <uc:CvDescriptor.Target>
+                                            <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1101, 448, 28, 27" ElementType="ArrowButton" />
+                                          </uc:CvDescriptor.Target>
+                                        </uc:CvDescriptor>
+                                      </p:CvClickWithDescriptor.DesignTimeDescriptor>
+                                      <p:CvClickWithDescriptor.Target>
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="27f3e103-37ca-45b8-b1ad-b503164ca110">
+                                          <ui:Target.TimeoutMS>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:Target.TimeoutMS>
+                                          <ui:Target.WaitForReady>
+                                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                                          </ui:Target.WaitForReady>
+                                        </ui:Target>
+                                      </p:CvClickWithDescriptor.Target>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </p:CvClickWithDescriptor>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_81" Level="Trace" Message="[&quot;No more pages&quot;]" />
+                                </If.Else>
+                              </If>
                             </Sequence>
                           </ActivityAction>
                         </p:CVScope.Body>
@@ -2228,6 +1907,9 @@
                       </p:CVScope>
                     </Sequence>
                   </ui:InterruptibleDoWhile.Body>
+                  <ui:InterruptibleDoWhile.Condition>
+                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="NextButton" />
+                  </ui:InterruptibleDoWhile.Condition>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2235,8 +1917,8 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:InterruptibleDoWhile>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="562,91" sap2010:WorkflowViewState.IdRef="LogMessage_78" Level="Trace" Message="[&quot;Filter datatable by Year, only work items with date above Year will be keept, aditionaly the first column is removed (Actions), and new columns added&quot;]" />
-                <TryCatch sap2010:Annotation.AnnotationText="Filter Datatable and send result rows to WorkItemsDT, keep in mind .CopyToDataTable throws an exception if no rows are returned&#xD;&#xA;&#xD;&#xA;Assign filtered values to WorkItemsDT&#xA;Remove Actions column&#xA;Add Column DownloadStatus&#xA;Add Column ClientID&#xA;Add Column Reason" DisplayName="Filter Datatable" sap:VirtualizedContainerService.HintSize="438,1010" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="867,93" sap2010:WorkflowViewState.IdRef="LogMessage_78" Level="Trace" Message="[&quot;Filter datatable by Year, only work items with date above Year will be keept, aditionaly the first column is removed (Actions), and new columns added&quot;]" />
+                <TryCatch sap2010:Annotation.AnnotationText="Filter Datatable and send result rows to WorkItemsDT, keep in mind .CopyToDataTable throws an exception if no rows are returned&#xA;&#xA;Assign filtered values to WorkItemsDT&#xA;Remove Actions column&#xA;Add Column DownloadStatus&#xA;Add Column ClientID&#xA;Add Column Reason" DisplayName="Filter Datatable" sap:VirtualizedContainerService.HintSize="867,271" sap2010:WorkflowViewState.IdRef="TryCatch_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -2322,7 +2004,7 @@ Select r).CopyToDataTable]</InArgument>
               </Sequence>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="608,21" sap2010:WorkflowViewState.IdRef="Catch`1_9">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="913,22" sap2010:WorkflowViewState.IdRef="Catch`1_9">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2333,7 +2015,7 @@ Select r).CopyToDataTable]</InArgument>
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                   </ActivityAction.Argument>
-                  <Throw sap2010:Annotation.AnnotationText="New SystemException(&quot;DATATABLE_ERROR&quot;)" DisplayName="Throw - DATATABLE_ERROR" Exception="[New SystemException(&quot;DATATABLE_ERROR&quot;)]" sap:VirtualizedContainerService.HintSize="200,64" sap2010:WorkflowViewState.IdRef="Throw_12">
+                  <Throw sap2010:Annotation.AnnotationText="New SystemException(&quot;DATATABLE_ERROR&quot;)" DisplayName="Throw - DATATABLE_ERROR" Exception="[New SystemException(&quot;DATATABLE_ERROR&quot;)]" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Throw_12">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -2342,7 +2024,7 @@ Select r).CopyToDataTable]</InArgument>
                   </Throw>
                 </ActivityAction>
               </Catch>
-              <Catch x:TypeArguments="ui:SelectorNotFoundException" sap:VirtualizedContainerService.HintSize="608,21" sap2010:WorkflowViewState.IdRef="Catch`1_10">
+              <Catch x:TypeArguments="ui:SelectorNotFoundException" sap:VirtualizedContainerService.HintSize="913,22" sap2010:WorkflowViewState.IdRef="Catch`1_10">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2353,7 +2035,7 @@ Select r).CopyToDataTable]</InArgument>
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:SelectorNotFoundException" Name="exception" />
                   </ActivityAction.Argument>
-                  <Throw sap2010:Annotation.AnnotationText="new SystemException(&quot;WORK_ITEMS_PAGE_IS_INVALID&quot;)" DisplayName="Throw - WORK_ITEMS_PAGE_IS_INVALID" Exception="[new SystemException(&quot;WORK_ITEMS_PAGE_IS_INVALID&quot;)]" sap:VirtualizedContainerService.HintSize="200,79" sap2010:WorkflowViewState.IdRef="Throw_11">
+                  <Throw sap2010:Annotation.AnnotationText="new SystemException(&quot;WORK_ITEMS_PAGE_IS_INVALID&quot;)" DisplayName="Throw - WORK_ITEMS_PAGE_IS_INVALID" Exception="[new SystemException(&quot;WORK_ITEMS_PAGE_IS_INVALID&quot;)]" sap:VirtualizedContainerService.HintSize="200,82" sap2010:WorkflowViewState.IdRef="Throw_11">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -2362,7 +2044,7 @@ Select r).CopyToDataTable]</InArgument>
                   </Throw>
                 </ActivityAction>
               </Catch>
-              <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="608,21" sap2010:WorkflowViewState.IdRef="Catch`1_11">
+              <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="913,22" sap2010:WorkflowViewState.IdRef="Catch`1_11">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2378,7 +2060,7 @@ Select r).CopyToDataTable]</InArgument>
               </Catch>
             </TryCatch.Catches>
           </TryCatch>
-          <TryCatch sap2010:Annotation.AnnotationText="Verify if WorkItems Datatable contains at least one item to process" DisplayName="Validate Output Datatable" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+          <TryCatch sap2010:Annotation.AnnotationText="Verify if WorkItems Datatable contains at least one item to process" DisplayName="Validate Output Datatable" sap:VirtualizedContainerService.HintSize="947,112" sap2010:WorkflowViewState.IdRef="TryCatch_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -2430,7 +2112,7 @@ Select r).CopyToDataTable]</InArgument>
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="993,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2450,7 +2132,7 @@ Select r).CopyToDataTable]</InArgument>
             </Throw>
           </ActivityAction>
         </Catch>
-        <Catch x:TypeArguments="ui:SelectorNotFoundException" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+        <Catch x:TypeArguments="ui:SelectorNotFoundException" sap:VirtualizedContainerService.HintSize="993,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2470,7 +2152,7 @@ Select r).CopyToDataTable]</InArgument>
             </Throw>
           </ActivityAction>
         </Catch>
-        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_8">
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="993,22" sap2010:WorkflowViewState.IdRef="Catch`1_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2486,6 +2168,6 @@ Select r).CopyToDataTable]</InArgument>
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Info" Message="[&quot;GetWorkItems Ended&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1027,93" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Info" Message="[&quot;GetWorkItems Ended&quot;]" />
   </Sequence>
 </Activity>
