@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>874,1210</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>874,782</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ACME_GoTo_WorkItem_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="45">
@@ -103,15 +103,15 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Goes to URL from current Work Item, using work item's WIID" DisplayName="GoToWorkItem" sap:VirtualizedContainerService.HintSize="480,1145" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Goes to URL from current Work Item, using work item's WIID" DisplayName="GoToWorkItem" sap:VirtualizedContainerService.HintSize="476,717" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;GoToWorkItem Started&quot;]" />
-    <TryCatch DisplayName="Try Catch Go To Work Item Browser" sap:VirtualizedContainerService.HintSize="438,760" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;GoToWorkItem Started&quot;]" />
+    <TryCatch DisplayName="Try Catch Go To Work Item Browser" sap:VirtualizedContainerService.HintSize="434,332" sap2010:WorkflowViewState.IdRef="TryCatch_9">
       <TryCatch.Try>
         <Sequence DisplayName="GoToWorkItem" sap:VirtualizedContainerService.HintSize="242,511" sap2010:WorkflowViewState.IdRef="Sequence_48">
           <Sequence.Variables>
@@ -123,7 +123,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap2010:Annotation.AnnotationText="If URL is not provided or doesn't match URL format, an exception is going to be thrown." DisplayName="Input Validations" sap:VirtualizedContainerService.HintSize="839,1414" sap2010:WorkflowViewState.IdRef="Sequence_43">
+          <Sequence sap2010:Annotation.AnnotationText="If URL is not provided or doesn't match URL format, an exception is going to be thrown." DisplayName="Input Validations" sap:VirtualizedContainerService.HintSize="200,138" sap2010:WorkflowViewState.IdRef="Sequence_43">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="URLFormat" />
             </Sequence.Variables>
@@ -740,7 +740,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_11">
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -754,10 +754,10 @@
             <Rethrow DisplayName="Rethrow - BRE" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Rethrow_3" />
           </ActivityAction>
         </Catch>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_12">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,148" sap2010:WorkflowViewState.IdRef="Catch`1_12">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -765,7 +765,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Throw sap2010:Annotation.AnnotationText="New SystemException(&quot;Failed: GoToWorkItem&quot; + vbCrLf + &quot;Exception: &quot; + exception.Message)" DisplayName="Throw - Failed: GoToWorkItem" Exception="[New SystemException(&quot;Failed: GoToWorkItem&quot; + vbCrLf + &quot;Exception: &quot; + exception.Message)]" sap:VirtualizedContainerService.HintSize="200,94" sap2010:WorkflowViewState.IdRef="Throw_26">
+            <Throw sap2010:Annotation.AnnotationText="New SystemException(&quot;Failed: GoToWorkItem&quot; + vbCrLf + &quot;Exception: &quot; + exception.Message)" DisplayName="Throw - Failed: GoToWorkItem" Exception="[New SystemException(&quot;GO_TO_WORK_ITEM_FAILED&quot;)]" sap:VirtualizedContainerService.HintSize="200,79" sap2010:WorkflowViewState.IdRef="Throw_26">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -776,6 +776,6 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;GoToWorkItem Ended&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;GoToWorkItem Ended&quot;]" />
   </Sequence>
 </Activity>

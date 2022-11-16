@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Logout" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="874,1239" sap2010:WorkflowViewState.IdRef="Logout_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Logout" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="874,745" sap2010:WorkflowViewState.IdRef="Logout_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="37">
+    <scg:List x:TypeArguments="x:String" Capacity="39">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -38,10 +38,12 @@
       <x:String>UiPath.OCR.Activities</x:String>
       <x:String>UiPath.OCR.Contracts.Activities</x:String>
       <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>UiPath.Vision.Core.OCR</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="35">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -77,33 +79,36 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Logout from ACME system" DisplayName="Logout" sap:VirtualizedContainerService.HintSize="514,1174" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Logout from ACME system" DisplayName="Logout" sap:VirtualizedContainerService.HintSize="476,680" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="472,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Logout Started&quot;]" />
-    <TryCatch DisplayName="Try Catch Logout" sap:VirtualizedContainerService.HintSize="472,789" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Logout Started&quot;]" />
+    <TryCatch DisplayName="Try Catch Logout" sap:VirtualizedContainerService.HintSize="434,295" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <TryCatch.Variables>
+        <Variable x:TypeArguments="x:String" Name="textNav" />
+        <Variable x:TypeArguments="scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))" Name="texts" />
+      </TryCatch.Variables>
       <TryCatch.Try>
-        <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="52ba8d89-170c-4bf4-9a3d-9ca670e2b52d" DisplayName="Logout from ACME Portal" sap:VirtualizedContainerService.HintSize="434,562" sap2010:WorkflowViewState.IdRef="CVScope_2" Version="V3">
+        <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="724729c8-9ded-4050-88e4-b0471bab16d9" DisplayName="Logout from ACME Portal" sap:VirtualizedContainerService.HintSize="434,562" sap2010:WorkflowViewState.IdRef="CVScope_2" Version="V3">
           <p:CVScope.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,228" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,359" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="400,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Trace" Message="[&quot;Logout from ACME portal&quot;]" />
-                <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'Log Out' (1150,18,52,16)&quot;]" DesignTimeCacheId="dd12926d-c87d-46e9-a3e3-207d22c07522" DesignTimeScaleFactor="1" DisplayName="CV Click Logout" sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InformativeScreenshot="8909587503cf609d9f87f19642ef5a3a" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text 'gout' (1106,20,34,13)&quot;]" DesignTimeCacheId="724729c8-9ded-4050-88e4-b0471bab16d9" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InformativeScreenshot="7d5a523294f6253d47ee72b3df109b3b" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
                   <p:CvClickWithDescriptor.CursorPosition>
                     <ui:CursorPosition Position="Center">
                       <ui:CursorPosition.OffsetX>
@@ -117,7 +122,7 @@
                   <p:CvClickWithDescriptor.DesignTimeDescriptor>
                     <uc:CvDescriptor>
                       <uc:CvDescriptor.Target>
-                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1150, 18, 52, 16" ElementType="Text" Text="Log Out" />
+                        <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1106, 20, 34, 13" ElementType="Text" Text="gout" />
                       </uc:CvDescriptor.Target>
                     </uc:CvDescriptor>
                   </p:CvClickWithDescriptor.DesignTimeDescriptor>
@@ -141,119 +146,26 @@
           <p:CVScope.DesignTimeCacheContainer>
             <uc:CvCacheContainer>
               <uc:CvCacheContainer.Caches>
-                <scg:List x:TypeArguments="uc:CVCache" Capacity="2">
-                  <uc:CVCache DisplayName="Work Item Screen" Id="dd12926d-c87d-46e9-a3e3-207d22c07522" InformativeScreenshot="2b32cbabff23218f48ff2c09c0c07049" LogicalPosition="0, 71" OcrText="ACME System 1 Home Switch to new theme Log Out Work Items - Work Item Details Home / Work Items / Work Item Details Calculate Client Security Hash Client Information Details Work Item Details Client ID: DB83622 WIID: 88083414 Client Name: Wilson Gau Type: Calculate Client Security Hash Client Country: Italy Status: Completed Date: 2022-01-12 Update Work Item Convright © 2022 ACME Svstems" Position="0, 71" ScreenshotGuid="1edf907b-e4da-4411-8f11-e18891ec3f55" ServerVersion="1">
-                    <uc:CVCache.CvUiElements>
-                      <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="32">
-                        <uc:CvElementInfo Category="Button" Region="564, 441, 159, 37" />
-                        <uc:CvElementInfo Category="Icon" Region="576, 449, 20, 20" />
-                        <uc:CvElementInfo Category="ArrowButton" Region="1262, 589, 18, 18" />
-                        <uc:CvElementInfo Category="ArrowButton" Region="1262, 0, 17, 18" />
-                        <uc:CvElementInfo Category="Cell" Region="141, 370, 439, 21" />
-                        <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="65, 159, 1139, 37" />
-                        <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="179, 13, 17, 22" />
-                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="133, 351, 433, 21" />
-                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="148, 296, 421, 34" />
-                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="142, 330, 430, 22" />
-                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="549, 286, 576, 39" />
-                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="540, 370, 633, 20" />
-                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="65, 147, 1077, 46" />
-                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="260, 234, 886, 42" />
-                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="545, 390, 581, 26" />
-                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="133, 233, 568, 41" />
-                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="144, 276, 428, 25" />
-                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="319, 406, 86, 18" />
-                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="473, 367, 350, 29" />
-                        <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="510, 276, 616, 29" />
-                      </scg:List>
-                    </uc:CVCache.CvUiElements>
-                    <uc:CVCache.OcrTexts>
-                      <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="64">
-                        <uc:OcrTextInfo Region="59, 16, 55, 16" Text="ACME" />
-                        <uc:OcrTextInfo Region="117, 16, 62, 20" Text="System" />
-                        <uc:OcrTextInfo Region="183, 16, 9, 16" Text="1" />
-                        <uc:OcrTextInfo Region="924, 18, 39, 13" Text="Home" />
-                        <uc:OcrTextInfo Region="991, 18, 43, 13" Text="Switch" />
-                        <uc:OcrTextInfo Region="1036, 18, 14, 13" Text="to" />
-                        <uc:OcrTextInfo Region="1052, 20, 28, 11" Text="new" />
-                        <uc:OcrTextInfo Region="1081, 17, 41, 14" Text="theme" />
-                        <uc:OcrTextInfo Region="1150, 18, 25, 16" Text="Log" />
-                        <uc:OcrTextInfo Region="1178, 18, 24, 13" Text="Out" />
-                        <uc:OcrTextInfo Region="59, 93, 87, 31" Text="Work" />
-                        <uc:OcrTextInfo Region="155, 94, 88, 30" Text="Items" />
-                        <uc:OcrTextInfo Region="251, 96, 15, 28" Text="-" />
-                        <uc:OcrTextInfo Region="273, 94, 87, 30" Text="Work" />
-                        <uc:OcrTextInfo Region="369, 94, 69, 30" Text="Item" />
-                        <uc:OcrTextInfo Region="448, 93, 111, 31" Text="Details" />
-                        <uc:OcrTextInfo Region="76, 171, 38, 13" Text="Home" />
-                        <uc:OcrTextInfo Region="121, 171, 7, 13" Text="/" />
-                        <uc:OcrTextInfo Region="134, 171, 35, 13" Text="Work" />
-                        <uc:OcrTextInfo Region="171, 170, 36, 14" Text="Items" />
-                        <uc:OcrTextInfo Region="213, 171, 7, 13" Text="/" />
-                        <uc:OcrTextInfo Region="226, 171, 35, 13" Text="Work" />
-                        <uc:OcrTextInfo Region="263, 171, 29, 13" Text="Item" />
-                        <uc:OcrTextInfo Region="294, 171, 45, 13" Text="Details" />
-                        <uc:OcrTextInfo Region="146, 250, 61, 13" Text="Calculate" />
-                        <uc:OcrTextInfo Region="209, 250, 38, 13" Text="Client" />
-                        <uc:OcrTextInfo Region="248, 250, 53, 16" Text="Security" />
-                        <uc:OcrTextInfo Region="303, 250, 34, 13" Text="Hash" />
-                        <uc:OcrTextInfo Region="161, 303, 49, 16" Text="Client" />
-                        <uc:OcrTextInfo Region="213, 303, 90, 16" Text="Information" />
-                        <uc:OcrTextInfo Region="308, 303, 56, 16" Text="Details" />
-                        <uc:OcrTextInfo Region="564, 303, 44, 16" Text="Work" />
-                        <uc:OcrTextInfo Region="612, 303, 36, 16" Text="Item" />
-                        <uc:OcrTextInfo Region="652, 303, 56, 16" Text="Details" />
-                        <uc:OcrTextInfo Region="161, 335, 42, 13" Text="Client" />
-                        <uc:OcrTextInfo Region="204, 335, 20, 13" Text="ID:" />
-                        <uc:OcrTextInfo Region="227, 335, 60, 13" Text="DB83622" />
-                        <uc:OcrTextInfo Region="564, 335, 38, 13" Text="WIID:" />
-                        <uc:OcrTextInfo Region="604, 335, 64, 13" Text="88083414" />
-                        <uc:OcrTextInfo Region="161, 355, 42, 13" Text="Client" />
-                        <uc:OcrTextInfo Region="205, 355, 43, 13" Text="Name:" />
-                        <uc:OcrTextInfo Region="250, 355, 45, 13" Text="Wilson" />
-                        <uc:OcrTextInfo Region="297, 355, 28, 13" Text="Gau" />
-                        <uc:OcrTextInfo Region="565, 355, 37, 16" Text="Type:" />
-                        <uc:OcrTextInfo Region="605, 355, 60, 13" Text="Calculate" />
-                        <uc:OcrTextInfo Region="667, 355, 38, 13" Text="Client" />
-                        <uc:OcrTextInfo Region="707, 354, 52, 17" Text="Security" />
-                        <uc:OcrTextInfo Region="761, 354, 34, 14" Text="Hash" />
-                        <uc:OcrTextInfo Region="161, 375, 42, 13" Text="Client" />
-                        <uc:OcrTextInfo Region="204, 375, 60, 16" Text="Country:" />
-                        <uc:OcrTextInfo Region="267, 374, 27, 17" Text="Italy" />
-                        <uc:OcrTextInfo Region="565, 375, 48, 13" Text="Status:" />
-                        <uc:OcrTextInfo Region="616, 374, 69, 17" Text="Completed" />
-                        <uc:OcrTextInfo Region="565, 395, 36, 13" Text="Date:" />
-                        <uc:OcrTextInfo Region="603, 395, 74, 13" Text="2022-01-12" />
-                        <uc:OcrTextInfo Region="596, 452, 46, 16" Text="Update" />
-                        <uc:OcrTextInfo Region="644, 452, 35, 13" Text="Work" />
-                        <uc:OcrTextInfo Region="681, 452, 29, 13" Text="Item" />
-                        <uc:OcrTextInfo Region="130, 596, 62, 11" Text="Convright" />
-                        <uc:OcrTextInfo Region="193, 596, 14, 11" Text="©" />
-                        <uc:OcrTextInfo Region="208, 596, 33, 11" Text="2022" />
-                        <uc:OcrTextInfo Region="242, 596, 43, 11" Text="ACME" />
-                        <uc:OcrTextInfo Region="287, 596, 55, 11" Text="Svstems" />
-                      </scg:List>
-                    </uc:CVCache.OcrTexts>
-                  </uc:CVCache>
-                  <uc:CVCache DisplayName="Logout Screen" Id="52ba8d89-170c-4bf4-9a3d-9ca670e2b52d" InformativeScreenshot="de998de2bd331c844f7d22e1d68e33fd" LogicalPosition="0, 71" OcrText="ACME System 1 Home Switch to new theme Log Out" Position="0, 71" ScreenshotGuid="be5f67f1-4255-4b48-9f1f-719c0939d5f0" ServerVersion="1">
+                <scg:List x:TypeArguments="uc:CVCache" Capacity="4">
+                  <uc:CVCache DisplayName="Screen CV Click - 'gout' (Main)" Id="724729c8-9ded-4050-88e4-b0471bab16d9" InformativeScreenshot="19f7980dd1b4cd1460a421b7483631a0" LogicalPosition="62, 71" OcrText="ACM S tem ome Switch to new them gout" Position="62, 71" ScreenshotGuid="8bf80cc9-cbcb-4b3e-b0ad-45fc985ce301" ServerVersion="1">
                     <uc:CVCache.CvUiElements>
                       <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="4">
-                        <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="101, 6, 842, 41" />
-                        <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="179, 13, 16, 21" />
+                        <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="26, 4, 930, 45" />
+                        <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="118, 13, 15, 21" />
+                        <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="1115, 17, 16, 16" />
                       </scg:List>
                     </uc:CVCache.CvUiElements>
                     <uc:CVCache.OcrTexts>
                       <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="16">
-                        <uc:OcrTextInfo Region="59, 16, 55, 16" Text="ACME" />
-                        <uc:OcrTextInfo Region="117, 16, 62, 20" Text="System" />
-                        <uc:OcrTextInfo Region="183, 16, 9, 16" Text="1" />
-                        <uc:OcrTextInfo Region="924, 18, 39, 13" Text="Home" />
-                        <uc:OcrTextInfo Region="991, 18, 43, 13" Text="Switch" />
-                        <uc:OcrTextInfo Region="1036, 18, 14, 13" Text="to" />
-                        <uc:OcrTextInfo Region="1052, 20, 28, 11" Text="new" />
-                        <uc:OcrTextInfo Region="1081, 17, 41, 14" Text="theme" />
-                        <uc:OcrTextInfo Region="1150, 18, 25, 16" Text="Log" />
-                        <uc:OcrTextInfo Region="1178, 18, 24, 13" Text="Out" />
+                        <uc:OcrTextInfo Region="0, 18, 39, 13" Text="ACM" />
+                        <uc:OcrTextInfo Region="57, 18, 11, 13" Text="S" />
+                        <uc:OcrTextInfo Region="87, 18, 29, 13" Text="tem" />
+                        <uc:OcrTextInfo Region="874, 22, 26, 8" Text="ome" />
+                        <uc:OcrTextInfo Region="931, 20, 40, 10" Text="Switch" />
+                        <uc:OcrTextInfo Region="975, 20, 12, 10" Text="to" />
+                        <uc:OcrTextInfo Region="992, 22, 25, 8" Text="new" />
+                        <uc:OcrTextInfo Region="1021, 20, 31, 10" Text="them" />
+                        <uc:OcrTextInfo Region="1106, 20, 34, 13" Text="gout" />
                       </scg:List>
                     </uc:CVCache.OcrTexts>
                   </uc:CVCache>
@@ -266,11 +178,11 @@
               <ActivityFunc.Argument>
                 <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
               </ActivityFunc.Argument>
-              <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_2" Image="[Image]" Language="en" Profile="Screen" Scale="1" Timeout="100000" />
+              <ui:MicrosoftOCR FilterRegion="{x:Null}" Language="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Microsoft OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MicrosoftOCR_2" Image="[Image]" Result="[texts]" />
             </ActivityFunc>
           </p:CVScope.OCREngine>
           <p:CVScope.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9d9a3367-08d4-46fc-86a2-fd64b56d3bbe" InformativeScreenshot="852a8b5e7946b0e090cbf0ec056e2783" Selector="&lt;html app='chrome.exe' title='ACME System 1*' /&gt;&lt;webctrl tag='NAV' /&gt;" WaitForReady="INTERACTIVE">
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9d9a3367-08d4-46fc-86a2-fd64b56d3bbe" InformativeScreenshot="dee1ec8257500ed7b83b20c68830eb6c" Selector="&lt;html app='chrome.exe' title='ACME System 1*' /&gt;&lt;webctrl tag='NAV' /&gt;" WaitForReady="INTERACTIVE">
               <ui:Target.TimeoutMS>
                 <InArgument x:TypeArguments="x:Int32" />
               </ui:Target.TimeoutMS>
@@ -288,10 +200,10 @@
         </p:CVScope>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,133" sap2010:WorkflowViewState.IdRef="Catch`1_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -299,7 +211,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Throw sap2010:Annotation.AnnotationText="New SystemException(&quot;Failed: Logout&quot; + vbCrLf + &quot;Exception: &quot; + exception.Message)" DisplayName="Throw - Failed: Logout" Exception="[New SystemException(&quot;Failed: Logout&quot; + vbCrLf + &quot;Exception: &quot; + exception.Message)]" sap:VirtualizedContainerService.HintSize="200,94" sap2010:WorkflowViewState.IdRef="Throw_5">
+            <Throw sap2010:Annotation.AnnotationText="New SystemException(&quot;LOGOUT_FAILED&quot;)" DisplayName="Throw - Failed: Logout" Exception="[New SystemException(&quot;LOGOUT_FAILED&quot;)]" sap:VirtualizedContainerService.HintSize="200,64" sap2010:WorkflowViewState.IdRef="Throw_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -310,6 +222,6 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="472,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Logout Ended&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Logout Ended&quot;]" />
   </Sequence>
 </Activity>
