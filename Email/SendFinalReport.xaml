@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>874,778</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>998,2328</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Email_Send_FinalReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -93,10 +93,9 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Send excel final report and zip folder through email&#xA;" DisplayName="SendFinalReport" sap:VirtualizedContainerService.HintSize="476,713" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Send excel final report and zip folder through email&#xA;" DisplayName="SendFinalReport" sap:VirtualizedContainerService.HintSize="646,2263" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="si:FileInfo" Name="zipped" />
     </Sequence.Variables>
@@ -106,17 +105,17 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SendFinalReport Started&quot;]" />
-    <TryCatch DisplayName="Try Catch Send Final Report" sap:VirtualizedContainerService.HintSize="434,317" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="604,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SendFinalReport Started&quot;]" />
+    <TryCatch DisplayName="Try Catch Send Final Report" sap:VirtualizedContainerService.HintSize="604,1867" sap2010:WorkflowViewState.IdRef="TryCatch_7">
       <TryCatch.Try>
-        <Sequence DisplayName="Send Final Report" sap:VirtualizedContainerService.HintSize="242,496" sap2010:WorkflowViewState.IdRef="Sequence_16">
+        <Sequence DisplayName="Send Final Report" sap:VirtualizedContainerService.HintSize="566,1618" sap2010:WorkflowViewState.IdRef="Sequence_16">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap2010:Annotation.AnnotationText="If Input arguments are not provided, an exception is going to be thrown." DisplayName="Inputs Validation" sap:VirtualizedContainerService.HintSize="200,123" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <Sequence sap2010:Annotation.AnnotationText="If Input arguments are not provided, an exception is going to be thrown." DisplayName="Inputs Validation" sap:VirtualizedContainerService.HintSize="524,123" sap2010:WorkflowViewState.IdRef="Sequence_13">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -140,19 +139,19 @@
               </If.Else>
             </If>
           </Sequence>
-          <TryCatch sap2010:Annotation.AnnotationText="Compress WIID Folder, if an error ocurrs, an exception is thrown" DisplayName="Compress WID Folder" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+          <TryCatch sap2010:Annotation.AnnotationText="Compress WIID Folder, if an error ocurrs, an exception is thrown" DisplayName="Compress WID Folder" sap:VirtualizedContainerService.HintSize="524,694" sap2010:WorkflowViewState.IdRef="TryCatch_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <Sequence DisplayName="Generate ZIP" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <Sequence DisplayName="Generate ZIP" sap:VirtualizedContainerService.HintSize="486,436" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -167,7 +166,7 @@
               </Sequence>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="490,21" sap2010:WorkflowViewState.IdRef="Catch`1_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -189,19 +188,19 @@
               </Catch>
             </TryCatch.Catches>
           </TryCatch>
-          <TryCatch sap2010:Annotation.AnnotationText="Send Email, if an error ocurrs, an exception is thrown" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="200,93" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+          <TryCatch sap2010:Annotation.AnnotationText="Send Email, if an error ocurrs, an exception is thrown" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="524,629" sap2010:WorkflowViewState.IdRef="TryCatch_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <Sequence DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_15">
+              <Sequence DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="376,371" sap2010:WorkflowViewState.IdRef="Sequence_15">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -209,8 +208,12 @@
                 <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="[EmailData.SelectToken(&quot;Body&quot;).ToString]" DisplayName="Send SMTP Mail Message with attachments" Email="[EmailData.SelectToken(&quot;Email&quot;).ToString]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="SendMail_4" IsBodyHtml="False" Port="[CInt(EmailData.SelectToken(&quot;Port&quot;).ToString)]" SecureConnection="Auto" SecurePassword="[Password]" Server="[EmailData.SelectToken(&quot;Server&quot;).ToString]" Subject="[EmailData.SelectToken(&quot;Subject&quot;).ToString]" To="[EmailData.SelectToken(&quot;To&quot;).ToString]">
                   <ui:SendMail.Files>
                     <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                      <InArgument x:TypeArguments="x:String">[zipped.FullName]</InArgument>
-                      <InArgument x:TypeArguments="x:String">[EmailData.SelectToken("FinalReport").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="zipped.FullName" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="EmailData.SelectToken(&quot;FinalReport&quot;).ToString" />
+                      </InArgument>
                     </scg:List>
                   </ui:SendMail.Files>
                 </ui:SendMail>
@@ -242,7 +245,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_9">
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="570,21" sap2010:WorkflowViewState.IdRef="Catch`1_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -256,10 +259,10 @@
             <Rethrow DisplayName="Rethrow - BRE" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Rethrow_2" />
           </ActivityAction>
         </Catch>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,133" sap2010:WorkflowViewState.IdRef="Catch`1_10">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="570,21" sap2010:WorkflowViewState.IdRef="Catch`1_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -267,7 +270,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Throw sap2010:Annotation.AnnotationText="New SystemException(&quot;Failed: Throw - Failed: SendFinalReport&quot; + vbCrLf + &quot;Exception: &quot; + exception.Message)" DisplayName="Throw - Failed: SendFinalReport" Exception="[New SystemException(&quot;SEND_REPORT_FAILED&quot;)]" sap:VirtualizedContainerService.HintSize="200,64" sap2010:WorkflowViewState.IdRef="Throw_13">
+            <Throw sap2010:Annotation.AnnotationText="New SystemException(&quot;Failed: Throw - Failed: SendFinalReport&quot; + vbCrLf + &quot;Exception: &quot; + exception.Message)" DisplayName="Throw - Failed: SendFinalReport" Exception="[New SystemException(&quot;SEND_REPORT_FAILED&quot;)]" sap:VirtualizedContainerService.HintSize="200,109" sap2010:WorkflowViewState.IdRef="Throw_13">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -278,6 +281,6 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;SendFinalReport Ended&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="604,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;SendFinalReport Ended&quot;]" />
   </Sequence>
 </Activity>

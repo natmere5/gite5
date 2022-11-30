@@ -1,0 +1,22 @@
+{
+    "WorkFlowToExecute" : "Download Work Item Details",
+    "ACMECredential" : "DWID_ACME_Credentials",
+    "EmailCredential" : "DWID_Email_Credentials",    
+    "ACMEURLLogin" : "https://acme-test.uipath.com/",
+    "ACMEURLWorkItems" : "https://acme-test.uipath.com/work-items/",
+    "WorkItemDate" : "2018",
+    "FilterColumn" : "Date",
+    "FinalReportPath" : "\\DownloadWorkItemDetails\\FinalReport.xlsx",
+    "MonitoredFolder" : "\\DownloadWorkItemDetails\\WIID",
+    "Comments" : "Downloaded,Not Downloaded",
+    "ButtonText" : "Download Check Request",
+    "PDFURL" : "\\DownloadWorkItemDetails\\WIID\\WIID_{0}.pdf",
+    "ZIPFile" : "Check Reports",
+    "EmailTo" : "natalia.mercado@e5.ai",
+    "EmailSubject" : "Final report",
+    "EmailBody" : "Please find the Final Report and zip folder attached",
+    "SMTPServer" : "smtp.gmail.com",
+    "SMTPPort" : "465",
+    "ColumnsName" : "WIID,Description,Type,Status,Date,DownloadStatus,ClientID,Reason",
+    "FinalReportParams" : "WorkItems,A,1"
+}

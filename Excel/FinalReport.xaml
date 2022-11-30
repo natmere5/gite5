@@ -3,6 +3,7 @@
     <x:Property sap2010:Annotation.AnnotationText="Datatable that contains the work items information" Name="WorkItemsDT" Type="InArgument(sd:DataTable)" />
     <x:Property sap2010:Annotation.AnnotationText="Final excel report path" Name="FinalReportPath" Type="InArgument(x:String)" />
     <x:Property sap2010:Annotation.AnnotationText="Contains Sheet name and Range" Name="ParametersDT" Type="InArgument(njl:JObject)" />
+    <x:Property sap2010:Annotation.AnnotationText="The name of all the columns that will be added to the final report" Name="ColumnsFinalReport" Type="InArgument(scg:List(x:String))" />
   </x:Members>
   <this:Excel_FinalReport.FinalReportPath>
     <InArgument x:TypeArguments="x:String" />
@@ -10,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>874,778</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>998,1073</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Excel_FinalReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="34">
@@ -82,7 +83,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Generates final excel report that contains information about Work Items, Columns: WIID, Description, Type, Status, Date, DownloadStatus, ClientID" DisplayName="FinalReport" sap:VirtualizedContainerService.HintSize="476,713" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Generates final excel report that contains information about Work Items, Columns: WIID, Description, Type, Status, Date, DownloadStatus, ClientID" DisplayName="FinalReport" sap:VirtualizedContainerService.HintSize="480,1008" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="fileExists" />
     </Sequence.Variables>
@@ -92,17 +93,17 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;FinalReport Started&quot;]" />
-    <TryCatch DisplayName="Try Catch Final Report" sap:VirtualizedContainerService.HintSize="434,317" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;FinalReport Started&quot;]" />
+    <TryCatch DisplayName="Try Catch Final Report" sap:VirtualizedContainerService.HintSize="438,612" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Final Report" sap:VirtualizedContainerService.HintSize="927,1654" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Final Report" sap:VirtualizedContainerService.HintSize="242,363" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap2010:Annotation.AnnotationText="If Input arguments are not provided, an exception is going to be thrown." DisplayName="Inputs Validation" sap:VirtualizedContainerService.HintSize="885,123" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <Sequence sap2010:Annotation.AnnotationText="If Input arguments are not provided, an exception is going to be thrown." DisplayName="Inputs Validation" sap:VirtualizedContainerService.HintSize="200,123" sap2010:WorkflowViewState.IdRef="Sequence_14">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -126,25 +127,29 @@
               </If.Else>
             </If>
           </Sequence>
-          <TryCatch sap2010:Annotation.AnnotationText="Generates Excel Final Report, if an error ocurrs, an exception is thrown" DisplayName="Final Report" sap:VirtualizedContainerService.HintSize="885,1399" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+          <TryCatch sap2010:Annotation.AnnotationText="Generates Excel Final Report, if an error ocurrs, an exception is thrown" DisplayName="Final Report" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="TryCatch_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <Sequence DisplayName="Generate Final Report" sap:VirtualizedContainerService.HintSize="847,1141" sap2010:WorkflowViewState.IdRef="Sequence_15">
+              <Sequence DisplayName="Generate Final Report" sap:VirtualizedContainerService.HintSize="917,2796" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Int32" Name="Counter" />
+                  <Variable x:TypeArguments="scg:List(x:String)" Name="ColumnsToRemove" />
+                </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="805,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Trace" Message="[&quot;Verifying if Final Report already exists...&quot;]" />
-                <ui:FileExistsX DisplayName="Final Report File Exists?" Exists="[fileExists]" sap:VirtualizedContainerService.HintSize="805,132" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[FinalReportPath]" />
-                <If Condition="[fileExists]" DisplayName="If fileExists" sap:VirtualizedContainerService.HintSize="805,460" sap2010:WorkflowViewState.IdRef="If_2">
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="875,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Trace" Message="[&quot;Verifying if Final Report already exists...&quot;]" />
+                <ui:FileExistsX DisplayName="Final Report File Exists?" Exists="[fileExists]" sap:VirtualizedContainerService.HintSize="875,132" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[FinalReportPath]" />
+                <If Condition="[fileExists]" DisplayName="If fileExists" sap:VirtualizedContainerService.HintSize="875,460" sap2010:WorkflowViewState.IdRef="If_2">
                   <If.Then>
                     <Sequence DisplayName="If fileExists - then" sap:VirtualizedContainerService.HintSize="426,302" sap2010:WorkflowViewState.IdRef="Sequence_9">
                       <sap:WorkflowViewStateService.ViewState>
@@ -160,12 +165,86 @@
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[&quot;Final report doesn't exist, ready to create it&quot;]" />
                   </If.Else>
                 </If>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="805,91" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Trace" Message="[&quot;Generating final report...&quot;]" />
-                <ui:WriteRange AddHeaders="True" DataTable="[WorkItemsDT]" DisplayName="Write WorkItemsDT Range" sap:VirtualizedContainerService.HintSize="805,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[ParametersDT(&quot;sheet_name&quot;).ToString]" StartingCell="[ParametersDT(&quot;range&quot;).ToString]" WorkbookPath="[FinalReportPath]" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="875,91" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Trace" Message="[&quot;Generating final report...&quot;]" />
+                <Assign DisplayName="Initialize ColumnsToRemove list" sap:VirtualizedContainerService.HintSize="875,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="scg:List(x:String)">[ColumnsToRemove]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="scg:List(x:String)">[New List (of String)]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:ForEach x:TypeArguments="sd:DataColumn" CurrentIndex="{x:Null}" DisplayName="For Each Column in WorkItemsDT" sap:VirtualizedContainerService.HintSize="875,812" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[WorkItemsDT.Columns]">
+                  <ui:ForEach.Body>
+                    <ActivityAction x:TypeArguments="sd:DataColumn">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="sd:DataColumn" Name="WorkItemColumn" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="For Each Column in WorkItemsDT Body" sap:VirtualizedContainerService.HintSize="839,688" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:Boolean" Name="ColumnExists" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="797,91" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Trace" Message="[&quot;Column &quot; + WorkItemColumn.ColumnName + &quot; needed?&quot;]" />
+                        <ExistsInCollection x:TypeArguments="x:String" Collection="[ColumnsFinalReport]" DisplayName="WorkItemsDT column needed?" sap:VirtualizedContainerService.HintSize="797,22" sap2010:WorkflowViewState.IdRef="ExistsInCollection`1_1" Item="[WorkItemColumn.ColumnName]" Result="[ColumnExists]" />
+                        <If Condition="[Not ColumnExists]" DisplayName="If WorkItemsDT column not needed?" sap:VirtualizedContainerService.HintSize="797,403" sap2010:WorkflowViewState.IdRef="If_5">
+                          <If.Then>
+                            <Sequence DisplayName="If WorkItemsDT column not needed? - then" sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Trace" Message="[&quot;Column &quot; + WorkItemColumn.ColumnName + &quot; not needed&quot;]" />
+                              <AddToCollection x:TypeArguments="x:String" Collection="[ColumnsToRemove]" DisplayName="Add Column to ColumnsToRemove" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_1" Item="[WorkItemColumn.ColumnName]" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence DisplayName="If WorkItemsDT column not needed? - false" sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Trace" Message="[&quot;Column &quot; + WorkItemColumn.ColumnName + &quot; needed&quot;]" />
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEach.Body>
+                </ui:ForEach>
+                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Column to remove" sap:VirtualizedContainerService.HintSize="875,532" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[ColumnsToRemove]">
+                  <ui:ForEach.Body>
+                    <ActivityAction x:TypeArguments="x:String">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="For Each Column to remove Body" sap:VirtualizedContainerService.HintSize="376,408" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:Boolean" Name="ColumnExists" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Trace" Message="[&quot;Removing column &quot; + item]" />
+                        <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="[item]" DataTable="[WorkItemsDT]" DisplayName="Remove item Column" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_2" />
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEach.Body>
+                </ui:ForEach>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="875,91" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Trace" Message="[&quot;Writting WorkItems Datatable to Excel file&quot;]" />
+                <ui:WriteRange AddHeaders="True" DataTable="[WorkItemsDT]" DisplayName="Write WorkItemsDT Range" sap:VirtualizedContainerService.HintSize="875,115" sap2010:WorkflowViewState.IdRef="WriteRange_3" SheetName="[ParametersDT(&quot;sheet_name&quot;).ToString]" StartingCell="[ParametersDT(&quot;write_column&quot;).ToString + ParametersDT(&quot;write_row&quot;).ToString]" WorkbookPath="[FinalReportPath]" />
               </Sequence>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="851,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="921,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -190,10 +269,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,133" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -210,7 +289,7 @@
             </Throw>
           </ActivityAction>
         </Catch>
-        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -226,6 +305,6 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;FinalReport Ended&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;FinalReport Ended&quot;]" />
   </Sequence>
 </Activity>
